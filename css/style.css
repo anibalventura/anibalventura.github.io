@@ -9,6 +9,7 @@
   font-family: 'open sans',arial,sans-serif;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 header {
@@ -54,4 +55,26 @@ header {
   font-style: italic;
   font-weight: 1;
   color: rgb(33, 132, 245);
+}
+
+#projects {
+  width: 100%;
+  background-color: rgb(53, 54, 121);
+}
+
+#projects h1 {
+  color: white;
+  text-align: center;
+  padding: 100px 0 50px 0;
+  font-size: 2em;
+}
+
+.project-tile {
+  display: block;
+  border: 1px solid black;
+}
+
+.project-tile a {
+  text-decoration: none;
+  color: white;
 }
