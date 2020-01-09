@@ -1,15 +1,22 @@
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url('http://themes.googleusercontent.com/static/fonts/opensans/v5/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff') format('woff');
+}
+
 * {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-family: 'open sans',arial,sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 header {
-  background: rgb(241, 240, 235);
-  margin: 0;
-  padding: 0;
+  background: rgb(33, 132, 245);
   overflow: hidden;
   position: fixed;
   width: 100%;
+  box-shadow: 0px 1px 2px black;
 }
 
 #navbar ul {
@@ -19,7 +26,32 @@ header {
 .nav-link {
   display: block;
   float: right;
-  color: black;
+  color: white;
   text-decoration: none;
-  padding: 10px 25px;
+  padding: 15px 35px 15px 0;
+  font-size: 1.3em;
+}
+
+.nav-link:hover {
+  color: rgb(245, 242, 33);
+}
+
+#welcome-section {
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  color: white;
+  background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
+}
+
+#welcome-section h1 {
+  padding-top: 250px;
+  font-size: 3.5em;
+}
+
+#welcome-section p {
+  font-size: 2em;
+  font-style: italic;
+  font-weight: 1;
+  color: rgb(33, 132, 245);
 }
