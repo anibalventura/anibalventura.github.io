@@ -1,12 +1,14 @@
 @font-face {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-style: normal;
   font-weight: 400;
-  src: local('Open Sans'), local('OpenSans'), url('http://themes.googleusercontent.com/static/fonts/opensans/v5/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff') format('woff');
+  src: local("Open Sans"), local("OpenSans"),
+    url("http://themes.googleusercontent.com/static/fonts/opensans/v5/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff")
+      format("woff");
 }
 
 * {
-  font-family: 'open sans',arial,sans-serif;
+  font-family: "open sans", arial, sans-serif;
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
@@ -60,21 +62,51 @@ header {
 #projects {
   width: 100%;
   background-color: rgb(53, 54, 121);
+  padding: 100px 0 50px 0;
+  border-radius: 2px;
 }
 
 #projects h1 {
   color: white;
   text-align: center;
-  padding: 100px 0 50px 0;
+  padding-bottom: 50px;
   font-size: 2em;
 }
 
-.project-tile {
-  display: block;
-  border: 1px solid black;
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 50px;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  margin-bottom: 50px;
 }
 
-.project-tile a {
+.project-tile {
+  box-shadow: 0 1px 10px 0 black;
   text-decoration: none;
   color: white;
+  font-weight: 550;
+}
+
+.project-tile img {
+  display: block;
+  width: 100%;
+}
+
+.project-title {
+  text-align: center;
+  background-color: rgb(30, 30, 56);
+  padding: 20px 0px;
+  width: 100%;
+}
+
+.code {
+  color: gray;
+  transition: color 0.5s ease-out;
+}
+
+.project-title:hover .code {
+  color: rgb(245, 242, 33);
 }
