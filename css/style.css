@@ -12,6 +12,15 @@
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 3.5em;
 }
 
 header {
@@ -29,8 +38,6 @@ header {
 .nav-link {
   display: block;
   float: right;
-  color: white;
-  text-decoration: none;
   padding: 15px 20px;
   font-size: 1.3em;
 }
@@ -43,13 +50,11 @@ header {
   width: 100%;
   height: 100vh;
   text-align: center;
-  color: white;
   background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
 }
 
 #welcome-section h1 {
   padding-top: 45vh;
-  font-size: 3.5em;
 }
 
 #welcome-section p {
@@ -62,30 +67,27 @@ header {
 #projects {
   width: 100%;
   background-color: rgb(53, 54, 121);
-  padding: 100px 0 50px 0;
+  padding: 100px 0 70px 0;
 }
 
 #projects h1 {
-  color: white;
   text-align: center;
-  padding-bottom: 50px;
   font-size: 2em;
 }
 
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  grid-gap: 50px;
-  width: 100%;
+  grid-gap: 40px;
+  width: 85%;
   max-width: 1280px;
   margin: 0 auto;
   margin-bottom: 50px;
+  padding-top: 50px;
 }
 
 .project-tile {
   box-shadow: 0 1px 10px 0 black;
-  text-decoration: none;
-  color: white;
   font-weight: 550;
 }
 
@@ -111,10 +113,9 @@ header {
 }
 
 .btn {
-  margin:auto;
-  display:block;
+  margin: auto;
+  display: block;
   padding: 10px 20px;
-  color: white;
   background-color: rgb(30, 30, 56);
   transition: background-color 0.5s ease-out;
   border: none;
@@ -130,24 +131,16 @@ header {
   text-align: center;
   padding: 25vh 0;
   background-color: rgb(30, 30, 56);
-  color: white;
-}
-
-#contact h1 {
-  font-size: 3.5em;
-  padding-bottom: 10px;
 }
 
 #contact p {
   font-size: 1em;
   font-style: italic;
   font-weight: 200;
-  padding-bottom: 40px;
+  padding: 10px 0 50px 0;
 }
 
 #profile-link {
-  text-decoration: none;
-  color: white;
   font-size: 1.5em;
   padding: 0 20px;
 }
@@ -156,6 +149,5 @@ footer {
   text-align: center;
   padding: 4vh 0;
   background-color: rgb(30, 30, 56);
-  color: white;
-  border-top: 5px solid rgb(33, 132, 245);;
+  border-top: 5px solid rgb(33, 132, 245);
 }
