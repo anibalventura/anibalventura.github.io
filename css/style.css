@@ -23,7 +23,7 @@ h1 {
   font-size: 3.5em;
 }
 
-header {
+#navbar {
   background: rgb(33, 132, 245);
   overflow: hidden;
   position: fixed;
@@ -33,6 +33,9 @@ header {
 
 #navbar ul {
   list-style-type: none;
+}
+
+#navbar {
 }
 
 .nav-link {
@@ -150,4 +153,52 @@ footer {
   padding: 4vh 0;
   background-color: rgb(30, 30, 56);
   border-top: 5px solid rgb(33, 132, 245);
+}
+
+/*Phone View*/
+@media (max-width: 600px) {
+  h1 {
+    font-size: 3em;
+  }
+
+  #welcome-section h1 {
+    padding-top: 40vh;
+  }
+
+  .project-grid {
+    grid-gap: 30px;
+    width: 90%;
+  }
+
+  #contact {
+    text-align: center;
+    padding: 25vh 0;
+  }
+
+  #contact h1 {
+    font-size: 2.2em;
+  }
+
+  #contact p {
+    font-size: 1.2em;
+    padding: 5px 0 50px 0;
+  }
+
+  #profile-link {
+    display: block;
+    font-size: 1.5em;
+    padding: 10px 20px;
+  }
+
+  footer {
+    font-size: 1.1em;
+  }
+}
+
+/*Tablet View*/
+@media (min-width: 601px) and (max-width: 990px) {
+  .project-grid {
+    grid-gap: 40px;
+    width: 95%;
+  }
 }
