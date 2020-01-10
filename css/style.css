@@ -48,7 +48,7 @@ header {
 }
 
 #welcome-section h1 {
-  padding-top: 250px;
+  padding-top: 45vh;
   font-size: 3.5em;
 }
 
@@ -63,7 +63,6 @@ header {
   width: 100%;
   background-color: rgb(53, 54, 121);
   padding: 100px 0 50px 0;
-  border-radius: 2px;
 }
 
 #projects h1 {
@@ -111,9 +110,25 @@ header {
   color: rgb(245, 242, 33);
 }
 
+.btn {
+  margin:auto;
+  display:block;
+  padding: 10px 20px;
+  color: white;
+  background-color: rgb(30, 30, 56);
+  transition: background-color 0.5s ease-out;
+  border: none;
+  border-radius: 2px;
+  font-size: 1.2em;
+}
+
+.btn:hover {
+  background: rgb(33, 132, 245);
+}
+
 #contact {
   text-align: center;
-  padding: 150px 0;
+  padding: 25vh 0;
   background-color: rgb(30, 30, 56);
   color: white;
 }
@@ -139,7 +154,7 @@ header {
 
 footer {
   text-align: center;
-  padding: 30px 0;
+  padding: 4vh 0;
   background-color: rgb(30, 30, 56);
   color: white;
   border-top: 5px solid rgb(33, 132, 245);;
