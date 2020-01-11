@@ -160,7 +160,6 @@ footer {
   }
 
   #navbar ul {
-    display: flex;
     justify-content: center;
   }
 
@@ -188,9 +187,12 @@ footer {
   }
 
   #profile-link {
-    display: block;
     font-size: 1.5em;
     padding: 10px 20px;
+  }
+
+  #profile-link img {
+    width: 14%;
   }
 
   footer {
@@ -203,5 +205,9 @@ footer {
   .project-grid {
     grid-gap: 40px;
     width: 95%;
+  }
+
+  #profile-link img {
+    width: 8%;
   }
 }
