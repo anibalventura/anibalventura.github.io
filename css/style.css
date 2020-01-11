@@ -33,11 +33,12 @@ h1 {
 
 #navbar ul {
   list-style-type: none;
+  display: flex;
+  justify-content: right;
 }
 
 .nav-link {
   display: block;
-  float: right;
   padding: 15px 20px;
   font-size: 1.3em;
 }
@@ -156,6 +157,11 @@ footer {
 @media (max-width: 600px) {
   h1 {
     font-size: 3em;
+  }
+
+  #navbar ul {
+    display: flex;
+    justify-content: center;
   }
 
   #welcome-section h1 {
