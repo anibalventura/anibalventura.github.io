@@ -11,6 +11,7 @@ The design is from a project of "Responsive Web Design Certification" on [freeCo
 - A short about me.
 - Portfolio projects for front-end development.
 - A contact section with links to LinkedIn, Github and send me a email.
+- Responsive layout for web and mobile.
 
 # Technologies
 
