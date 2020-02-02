@@ -109,7 +109,7 @@ h1 {
   transition: color 0.5s ease-out;
 }
 
-.project-title:hover .code {
+.project-tile:hover .code {
   color: rgb(245, 242, 33);
 }
 
@@ -138,12 +138,16 @@ h1 {
   font-size: 1em;
   font-style: italic;
   font-weight: 200;
-  padding: 10px 0 50px 0;
+  padding: 10px 0 30px 0;
 }
 
 #profile-link {
   font-size: 1.5em;
   padding: 0 20px;
+}
+
+#profile-link img {
+  width: 40px;
 }
 
 footer {
@@ -191,10 +195,6 @@ footer {
     padding: 10px 20px;
   }
 
-  #profile-link img {
-    width: 14%;
-  }
-
   footer {
     font-size: 1.1em;
   }
@@ -205,9 +205,5 @@ footer {
   .project-grid {
     grid-gap: 40px;
     width: 95%;
-  }
-
-  #profile-link img {
-    width: 8%;
   }
 }
