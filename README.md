@@ -1,16 +1,14 @@
 # Anibal's Website
 
-This is Anibal's personal website.
+This is my personal website.
 
-Visit website here: [https://anibalventura.github.io/](https://anibalventura.github.io/)
-
-The design is from a project of "Responsive Web Design Certification" on [freeCodeCamp.org](https://www.freecodecamp.org/learn/) curriculum.
+Visit site here: [https://anibalventura.github.io/](https://anibalventura.github.io/)
 
 # Features
 
 - A short about me.
 - Portfolio projects for front-end development.
-- A contact section with links to LinkedIn, Github and send me a email.
+- A contact section with links to LinkedIn, Github and to send me a email.
 - Responsive layout for web and mobile.
 
 # Technologies
