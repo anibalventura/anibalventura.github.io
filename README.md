@@ -20,4 +20,4 @@ Visit site here: [https://anibalventura.github.io/](https://anibalventura.github
 
 Anibal Ventura
 
-Feedback on my website is very welcome! You can make a pull request.
+Feedback on my website is very welcome!
