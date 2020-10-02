@@ -1,144 +1,374 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Anibal Ventura - WebDev</title>
-    <link rel="stylesheet" href="./css/style.css" />
-    <link
-      href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin"
-      rel="stylesheet"
-    />
-  </head>
+<head>
+    <title>Anibal Ventura | Android Developer</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Anibal Ventura | Android Developer">
+    <meta name="author" content="Anibal Ventura | Android Developer">    
+    <link rel="shortcut icon" href="favicon.ico">  
+    
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'> 
+    
+    <!-- FontAwesome JS -->
+    <script defer src="assets/fontawesome/js/all.js"></script>
+    
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">   
+    
+    <!-- github calendar css -->
+    <link rel="stylesheet" href="assets/plugins/github-calendar/dist/github-calendar.css">
+    <!-- github activity css -->    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css">
+    <link rel="stylesheet" href="assets/plugins/github-activity/github-activity-0.1.5.min.css">
+    
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+    
+</head> 
 
-  <body>
-    <header>
-      <nav id="navbar">
-        <ul>
-          <li><a href="#welcome-section" class="nav-link">About</a></li>
-          <li><a href="#projects" class="nav-link">Work</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
-      </nav>
+<body>
+    <!-- ******HEADER****** --> 
+    <header class="header">
+        <div class="container clearfix">                       
+            <img class="profile-image img-fluid float-left rounded-circle" src="assets/images/profile.png" alt="profile image" />
+            <div class="profile-content float-left">
+                <h1 class="name">Anibal Ventura</h1>
+                <h2 class="desc">Android Developer</h2>
+                <ul class="social list-inline">
+                    <li class="list-inline-item"><a href="https://www.linkedin.com/in/anibalventura/" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                    <li class="list-inline-item"><a href="https://github.com/anibalventura" target="_blank"><i class="fab fa-github-alt"></i></a></li>
+                    <li class="list-inline-item"><a href="https://play.google.com/store/search?q=pub%3A%20Anibal%20Ventura&c=apps&hl=en" target="_blank"><i class="fab fa-google-play"></i></a></li>
+                </ul> 
+            </div>
+            <a class="btn btn-cta-primary float-right" href="mailto:anibalventura20@gmail.com.com?subject=Hi Anibal!"><i class="fas fa-paper-plane"></i> Contact Me</a>              
+        </div>
     </header>
+    
+    <div class="container sections-wrapper">
+        <div class="row">
 
-    <main>
-      <section id="welcome-section">
-        <h1>Hey! I am Anibal</h1>
-        <p>Full Stack Web Developer</p>
-      </section>
+            <!-- ******PRIMARY COLUMN****** --> 
+            <div class="primary col-lg-8 col-12">
+                <section class="about section">
+                    <div class="section-inner shadow-sm rounded">
+                        <h2 class="heading">About Me</h2>
+                        <div class="content">
+                            <p>• Junior Android developer able to build an Android application from the ground up - from concept, navigation, layout and programming to UI and upload to the Play Store.</p>
+                            <p>• Skilled at writing well-designed, testable and efficient code using current best practices in Android development.</p>
+                            <p>• Fast learner, hard worker and team plater who is proficient in an array of tool for Android development.</p>                         
+                        </div>
+                    </div>
+                </section>
+    
+               <section class="latest section">
+                    <div class="section-inner shadow-sm rounded">
+                        <h2 class="heading">Latest Projects</h2>
+                        <div class="content">    
+                                               
+                            <div class="item featured text-center">
+                                
+                                <div class="featured-image has-ribbon">
+                                    <a href="https://play.google.com/store/apps/details?id=com.anibalventura.anothernote" target="_blank">
+                                    <img class="img-fluid project-image rounded shadow-sm" src="assets/images/projects/project-featured.jpg" alt="another note" />
+                                    </a>
+                                    <div class="ribbon">
+                                        <div class="text">New</div>
+                                    </div>
+                                </div>
+                                
+                                <h3 class="title mb-3">Another Note - Note tanking App</h3>
+                                    
+                                <div class="desc text-left">                                    
+                                    <p>Another Note is a simple and awesome note taking app. It gives you a quick and simple note editing experience when you write notes, memos, e-mails and messages. Taking notes with Another Note is easier than any other notepad or memo pad app.</p>
+                                </div>
+                                <a href="https://play.google.com/store/apps/details?id=com.anibalventura.anothernote" target="blank"><img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" height="60"></a>
+                                <a href="https://github.com/anibalventura/another-note" target="blank"><img src="assets/images/logos/github-logo-black.png" height="60"></a>
+                            </div>
+<!--
+                            <hr class="divider" />
 
-      <section id="projects">
-        <h1>These are some of my projects</h1>
+                            <div class="item row">
+                                <a class="col-md-4 col-12" href="https://themes.3rdwavemedia.com/bootstrap-templates/startup/coderpro-bootstrap-4-startup-template-for-software-projects/" target="_blank">
+                                <img class="img-fluid project-image rounded shadow-sm" src="assets/images/projects/project-1.png" alt="project name" />
+                                </a>
+                                <div class="desc col-md-8 col-12">
+                                    <h3 class="title">CoderPro - Bootstrap 4 Startup Template For Software Projects</h3>
+                                    <p class="mb-2">You can put one of your secondary projects here. Suspendisse in tellus dolor. Vivamus a tortor eu turpis pharetra consequat quis non metus. Aliquam aliquam, orci eu suscipit pellentesque, mauris dui tincidunt enim, eget iaculis ante dolor non turpis.</p>
+                                    <p><a class="more-link" href="#" target="_blank"><i class="fab fa-google-play"></i>Get it on Google Play</a></p>
+                                    <p><a class="more-link" href="#" target="_blank"><i class="fab fa-github"></i>Check source code</a></p>
+                                </div>
+                            </div>
+                            
+                            <div class="item row">
+                                <a class="col-md-4 col-12" href="https://themes.3rdwavemedia.com/bootstrap-templates/resume/devcard-bootstrap-4-vcard-portfolio-template-for-software-developers/" target="_blank">
+                                <img class="img-fluid project-image rounded shadow-sm" src="assets/images/projects/project-2.png" alt="project name" />
+                                </a>
+                                <div class="desc col-md-8 col-12">
+                                    <h3 class="title"><a href="https://themes.3rdwavemedia.com/bootstrap-templates/resume/devcard-bootstrap-4-vcard-portfolio-template-for-software-developers/" target="_blank">DevCard - Bootstrap 4 Portfolio Template for Software Developers</a></h3>
+                                    <p class="mb-2">You can put one of your secondary projects here. Suspendisse in tellus dolor. Vivamus a tortor eu turpis pharetra consequat quis non metus. Aliquam aliquam, orci eu suscipit pellentesque, mauris dui tincidunt enim, eget iaculis ante dolor non turpis.</p>
+                                    <p><a class="more-link" href="https://themes.3rdwavemedia.com/bootstrap-templates/resume/devcard-bootstrap-4-vcard-portfolio-template-for-software-developers/" target="_blank"><i class="fas fa-external-link-alt"></i>Find out more</a></p>
+                                </div>                    
+                            </div>
+                            
+                             <div class="item row">
+                                <a class="col-md-4 col-12" href="https://themes.3rdwavemedia.com/bootstrap-templates/resume/instance-bootstrap-portfolio-theme-for-developers/" target="_blank">
+                                <img class="img-fluid project-image rounded shadow-sm" src="assets/images/projects/project-3.png" alt="project name" />
+                                </a>
+                                <div class="desc col-md-8 col-12">
+                                    <h3 class="title"><a href="https://themes.3rdwavemedia.com/bootstrap-templates/resume/instance-bootstrap-portfolio-theme-for-developers/" target="_blank">Instance - Bootstrap 4 Portfolio Template for Aspiring Full Stack Developers</a></h3>
+                                    <p class="mb-2">You can put one of your secondary projects here. Suspendisse in tellus dolor. Vivamus a tortor eu turpis pharetra consequat quis non metus. Aliquam aliquam, orci eu suscipit pellentesque, mauris dui tincidunt enim, eget iaculis ante dolor non turpis.</p>
+                                    <p><a class="more-link" href="https://themes.3rdwavemedia.com/bootstrap-templates/resume/instance-bootstrap-portfolio-theme-for-developers/" target="_blank"><i class="fas fa-external-link-alt"></i>Find out more</a></p>
+                                </div>                      
+                            </div>
+                            -->
+                        </div>
+                    </div>
+                </section>
+                
+                <!--
+                <section class="projects section">
+                    <div class="section-inner shadow-sm rounded">
+                        <h2 class="heading">Other Projects</h2>
+                        <div class="content">
+                            <div class="item">
+                                <h3 class="title"><a href="https://themes.3rdwavemedia.com/bootstrap-templates/resume/free-bootstrap4-resume-cv-template-for-developers-pillar/" target="_blank">Pillar - Free Bootstrap 4 Resume/CV Template for Developers</a> <span class="badge badge-theme">Free</span></h3>
+                                <p class="summary">Provide a brief description of your project. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatu.</p>
+                                <p><a class="more-link" href="https://themes.3rdwavemedia.com/bootstrap-templates/resume/free-bootstrap4-resume-cv-template-for-developers-pillar/" target="_blank"><i class="fas fa-external-link-alt"></i>Download Now</a></p>
+                            </div>
+                            <div class="item">
+                                <h3 class="title"><a href="https://themes.3rdwavemedia.com/bootstrap-templates/speciality/devblog-free-bootstrap-4-blog-template-for-developers/" target="_blank">DevBlog - Free Bootstrap 4 Blog Template for Developers</a> <span class="badge badge-theme">Free</span></h3>
+                                <p class="summary">Provide a brief description of your project. Maecenas ornare ultricies risus, in fermentum augue consectetur in. Vestibulum vitae mauris iaculis, sollicitudin velit in, molestie nulla. </p>
+                                <p><a class="more-link" href="https://themes.3rdwavemedia.com/bootstrap-templates/speciality/devblog-free-bootstrap-4-blog-template-for-developers/" target="_blank"><i class="fas fa-external-link-alt"></i>Download Now</a></p>
+                            </div>
+                            <div class="item">
+                                <h3 class="title"><a href="https://themes.3rdwavemedia.com/bootstrap-templates/startup/nova-bootstrap-landing-page-template-for-mobile-apps/" target="_blank">Nova - Free App Landing Page Template for App Developers</a> <span class="badge badge-theme">Free</span></h3>
+                                <p class="summary">Provide a brief description of your project. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel purus enim. Etiam tortor felis, fermentum ac ultrices sed.</p>
+                                <p><a class="more-link" href="https://themes.3rdwavemedia.com/bootstrap-templates/startup/nova-bootstrap-landing-page-template-for-mobile-apps/" target="_blank"><i class="fas fa-external-link-alt"></i>Download Now</a></p>
+                            </div>
+                            
+                            <a class="btn btn-cta-secondary" href="https://github.com/anibalventura">More on GitHub <i class="fas fa-chevron-right pt-1"></i></a>
+                            
+                        </div>
+                    </div>
+                </section>
+                -->
+                
+                <!--
+                <section class="experience section">
+                    <div class="section-inner shadow-sm rounded">
+                        <h2 class="heading">Work Experience</h2>
+                        <div class="content">
+                            <div class="item">
+                                <h3 class="title">Co-Founder & Lead Developer - <span class="place"><a href="#">Startup Hub</a></span> <span class="year">(2014 - Present)</span></h3>
+                                <p>Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt.</p>
+                            </div>
+                            <div class="item">
+                                <h3 class="title">Software Engineer - <span class="place"><a href="#">Google</a></span> <span class="year">(2013 - 2014)</span></h3>
+                                <p>Vivamus a tortor eu turpis pharetra consequat quis non metus. Aliquam aliquam, orci eu suscipit pellentesque, mauris dui tincidunt enim. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna.</p>
+                            </div>
+                            
+                            <div class="item">
+                                <h3 class="title">Software Engineer - <span class="place"><a href="#">eBay</a></span> <span class="year">(2012 - 2013)</span></h3>
+                                <p>Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum.</p>
+                            </div>
+                            
+                        </div>
+                    </div>          
+                </section>
+                -->
 
-        <div class="project-grid">
-          <a
-            href="https://anibalventura.github.io/shipping-company-page/"
-            target="_blank"
-            class="project-tile"
-          >
-            <img src="./images/shippingCompany.png" alt="Shipping Company" />
-            <p class="project-title">
-              <span class="code">&lt;</span>
-              Shipping Company
-              <span class="code">&#47;&gt;</span>
-            </p>
-          </a>
+                <section class="github section">
+                    <div class="section-inner shadow-sm rounded">
+                        <h2 class="heading">My GitHub</h2>
+                        
+                        <div id="github-graph" class="github-graph">
+                        <div id="ghfeed" class="ghfeed">
+                        
+                    </div>
+                </section>
+            </div>
 
-          <a
-            href="https://anibalventura.github.io/learning-webdev/freecodecamp/product-landing-page/"
-            target="_blank"
-            class="project-tile"
-          >
-            <img
-              src="./images/productLandingPage.png"
-              alt="Product Landing Page"
-            />
-            <p class="project-title">
-              <span class="code">&lt;</span>
-              Product Landing Page
-              <span class="code">&#47;&gt;</span>
-            </p>
-          </a>
+            <!-- ******SECONDAY COLUMN****** --> 
+            <div class="secondary col-lg-4 col-12">
+                 <aside class="info aside section">
+                    <div class="section-inner shadow-sm rounded">
+                        <h2 class="heading sr-only">Basic Information</h2>
+                        <div class="content">
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-map-marker-alt"></i><span class="sr-only">Location:</span>Santo Domingo, Dominican Republic</li>
+                                <li><i class="fas fa-envelope"></i><span class="sr-only">Email:</span><a href="mailto:anibalventura20@gmail.com.com?subject=Hi Anibal!">anibalventura20@gmail.com</a></li>
+                                <li><i class="fas fa-link"></i><span class="sr-only">Website:</span><a href="https://www.anibalventura.com">https://www.anibalventura.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </aside>
+                
+                <aside class="skills aside section">
+                    <div class="section-inner shadow-sm rounded">
+                        <h2 class="heading">Profesional Skills</h2>
+                        <div class="content">
+                            <!-- 
+                                <p class="intro">
+                                Intro about your skills goes here. Keep the list lean and only show your primary skillset. You can always provide a link to your Linkedin or Github profile so people can get more info there.</p>
+                                -->
+                            
+                            <div class="skillset">
+                               
+                                <div class="item">
+                                    <h3 class="level-title">Android<span class="level-label" data-toggle="tooltip" data-placement="left" data-animation="true" title="Android software development is the process by which applications are created for devices running the Android operating system. "><i class="fas fa-info-circle"></i></span></h3>
+                                    <div class="level-bar">
+                                        <div class="level-bar-inner" data-level="55%">
+                                        </div>                                      
+                                    </div>
+                                </div>
+                                
+                                <div class="item">
+                                    <h3 class="level-title">Kotlin<span class="level-label" data-toggle="tooltip" data-placement="left" data-animation="true" title="Official programming language for Android development."><i class="fas fa-info-circle"></i></span></h3>
+                                    <div class="level-bar">
+                                        <div class="level-bar-inner" data-level="55%">
+                                        </div>                                      
+                                    </div>
+                                </div>
 
-          <a
-            href="https://anibalventura.github.io/learning-webdev/freecodecamp/survey-form/"
-            target="_blank"
-            class="project-tile"
-          >
-            <img src="./images/surveyForm.png" alt="Survey Form" />
-            <p class="project-title">
-              <span class="code">&lt;</span>
-              Survey Form
-              <span class="code">&#47;&gt;</span>
-            </p>
-          </a>
+                                <div class="item">
+                                    <h3 class="level-title">OOP<span class="level-label" data-toggle="tooltip" data-placement="left" data-animation="true" title="Object-oriented programming is a programming paradigm based on the concept of objects, which can contain data and code: data in the form of fields, and code, in the form of procedures."><i class="fas fa-info-circle"></i></span></h3>
+                                    <div class="level-bar">
+                                        <div class="level-bar-inner" data-level="50%">
+                                        </div>                                      
+                                    </div>
+                                </div>
 
-          <a
-            href="https://anibalventura.github.io/learning-webdev/freecodecamp/technical-documentation-page/"
-            target="_blank"
-            class="project-tile"
-          >
-            <img
-              src="./images/technicalDocumentationPage.png"
-              alt="Technical Documentation Page"
-            />
-            <p class="project-title">
-              <span class="code">&lt;</span>
-              Technical Documentation Page
-              <span class="code">&#47;&gt;</span>
-            </p>
-          </a>
+                                <div class="item">
+                                    <h3 class="level-title">SQL<span class="level-label" data-toggle="tooltip" data-placement="left" data-animation="true" title="SQL is a domain-specific language used in programming and designed for managing data held in a relational database management system."><i class="fas fa-info-circle"></i></span></h3>
+                                    <div class="level-bar">
+                                        <div class="level-bar-inner" data-level="50%">
+                                        </div>                                      
+                                    </div>
+                                </div>
 
-          <a
-            href="https://anibalventura.github.io/learning-webdev/freecodecamp/tribute-page/"
-            target="_blank"
-            class="project-tile"
-          >
-            <img src="./images/tributePage.png" alt="Tribute Page" />
-            <p class="project-title">
-              <span class="code">&lt;</span>
-              Tribute Page
-              <span class="code">&#47;&gt;</span>
-            </p>
-          </a>
+                                <div class="item">
+                                    <h3 class="level-title">XML<span class="level-label" data-toggle="tooltip" data-placement="left" data-animation="true" title="XML stands for Extensible Markup Language. Is a markup language much like HTML used to describe data and UI on Android Applications."><i class="fas fa-info-circle"></i></span></h3>
+                                    <div class="level-bar">
+                                        <div class="level-bar-inner" data-level="70%">
+                                        </div>                                      
+                                    </div>
+                                </div>
+                                
+                                <div class="item">
+                                    <h3 class="level-title">HTML5, CSS3, Javascript<span class="level-label" data-toggle="tooltip" data-placement="left" data-animation="true" title="Set of programming languages used to build static Web pages."><i class="fas fa-info-circle"></i></span></h3>
+                                    <div class="level-bar">
+                                        <div class="level-bar-inner" data-level="50%">
+                                        </div>                                      
+                                    </div>
+                                </div>
+                                
+                                <div class="item">
+                                    <h3 class="level-title">Git/Github<span class="level-label" data-toggle="tooltip" data-placement="left" data-animation="true" title="Version control and source code management."><i class="fas fa-info-circle"></i></span></h3>
+                                    <div class="level-bar">
+                                        <div class="level-bar-inner" data-level="75%">
+                                        </div>                                      
+                                    </div>
+                                </div>
+                                
+                                <p><a class="more-link" href="https://github.com/anibalventura" target="blank"><i class="fas fa-external-link-alt"></i>More on GitHub</a></p> 
+                            </div>              
+                        </div>
+                    </div>
+                </aside>
+                
+                <!--
+                <aside class="testimonials aside section">
+                    <div class="section-inner shadow-sm rounded">
+                        <h2 class="heading">Testimonials</h2>
+                        <div class="content">
+                            <div class="item">
+                                <blockquote class="quote">                                  
+                                    <p><i class="fas fa-quote-left"></i>James is an excellent software engineer and he is passionate about what he does. You can totally count on him to deliver your projects!</p>
+                                </blockquote>                
+                                <p class="source"><span class="name">Tim Adams</span><br /><span class="title">Curabitur commodo</span></p>                                                             
+                            </div>
+                            
+                            <p><a class="more-link" href="#"><i class="fas fa-external-link-alt"></i>More on Linkedin</a></p> 
+                            
+                        </div>
+                    </div>
+                </aside>
+                -->
+
+                <aside class="education aside section">
+                    <div class="section-inner shadow-sm rounded">
+                        <h2 class="heading">Education</h2>
+                        <div class="content">
+                            <div class="item">                      
+                                <h3 class="title"><i class="fas fa-graduation-cap"></i> Full Stack Developer</h3>
+                                <h4 class="university"><a href="https://www.freecodecamp.org/" target="blank">freeCodeCamp </a><span class="year">(2019-2020)</span></h4>
+                            </div>
+                            <div class="item">
+                                <h3 class="title"><i class="fas fa-graduation-cap"></i> Bachelor's in Business Administration</h3>
+                                <h4 class="university"><a href="https://www.intec.edu.do/" target="blank">INTEC </a><span class="year">(2012-2016)</span></h4>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+                            
+                <aside class="languages aside section">
+                    <div class="section-inner shadow-sm rounded">
+                        <h2 class="heading">Languages</h2>
+                        <div class="content">
+                            <ul class="list-unstyled">
+                                <li class="item">
+                                    <span class="title"><strong>Spanish:</strong></span>
+                                    <span class="level">Native Speaker <br class="visible-xs"/><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> </span>
+                                </li>
+                                <li class="item">
+                                    <span class="title"><strong>English:</strong></span>
+                                    <span class="level">Professional Proficiency <br class="visible-sm visible-xs"/><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star-half"></i></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </aside>
+                
+                <aside class="list conferences aside section">
+                    <div class="section-inner shadow-sm rounded">
+                        <h2 class="heading">Conferences</h2>
+                        <div class="content">
+                            <ul class="list-unstyled">
+                                <li><i class="far fa-calendar-alt"></i> <a href="https://codecampsdq.com/" target="_blank">CodeCampSDQ 2020</a> (Santo Domingo, D.R.)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </aside>
+            
+              
+            </div>
         </div>
-
-        <button class="btn" type="button" onclick="alert('Coming soon!')">
-          Show more
-        </button>
-      </section>
-
-      <section id="contact">
-        <h1>Let's work together...</h1>
-        <p>Feel free to check my profiles and contact me!</p>
-        <div class="profiles">
-          <a
-            id="profile-link"
-            href="https://www.linkedin.com/in/anibalventura/"
-            target="_blank"
-            ><img src="./images/linkedinLogo64.png" alt=""
-          /></a>
-          <a
-            id="profile-link"
-            href="https://github.com/anibalventura"
-            target="_blank"
-            ><img src="./images/githubLogo64.png" alt=""
-          /></a>
-
-          <a
-            id="profile-link"
-            href="mailto:anibalventura20@gmail.com"
-            target="_blank"
-            ><img src="./images/gmailLogo64.png" alt=""
-          /></a>
+    </div>
+    
+    <!-- ******FOOTER****** --> 
+    <footer class="footer">
+        <div class="container text-center">
+                <!--/* This template is free as long as you keep the attribution link below. Thank you for your support. :) If you'd like to use the template without the attribution, you can buy the commercial license via our website: themes.3rdwavemedia.com */-->
+                <small class="copyright">Designed with <i class="fas fa-heart"></i> by <a href="https://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small>
         </div>
-      </section>
-    </main>
-
-    <footer>
-      <p>© 2020 Anibal Ventura</p>
     </footer>
-  </body>
-</html>
+ 
+    <!-- Javascript -->          
+    <script type="text/javascript" src="assets/plugins/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/popper.min.js"></script> 
+    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>    
+    <script type="text/javascript" src="assets/plugins/jquery-rss/dist/jquery.rss.min.js"></script> 
+    <!-- github calendar plugin -->
+    <script type="text/javascript" src="assets/plugins/github-calendar/dist/github-calendar.min.js"></script>
+    <!-- github activity plugin -->
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/github-activity/github-activity-0.1.5.min.js"></script>
+    <!-- custom js -->
+    <script type="text/javascript" src="assets/js/main.js"></script>            
+</body>
+</html> 
+

@@ -15,9 +15,8 @@ Visit site here: [https://anibalventura.github.io/](https://anibalventura.github
 
 - HTML
 - CSS
+- Javascript
 
 # Authors
 
-Anibal Ventura
-
-Feedback on my website is very welcome!
+Xiaoying Riley at 3rd Wave Media (https://themes.3rdwavemedia.com/)
