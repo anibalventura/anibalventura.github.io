@@ -2,12 +2,12 @@
 
 This is my personal website.
 
-Visit site here: [https://anibalventura.github.io/](https://anibalventura.github.io/)
+Visit site here: [https://www.anibalventura.com/](https://www.anibalventura.com/)
 
 # Features
 
 - A short about me.
-- Portfolio projects for front-end development.
+- Portfolio projects for Android development
 - A contact section with links to LinkedIn, Github and to send me a email.
 - Responsive layout for web and mobile.
 
