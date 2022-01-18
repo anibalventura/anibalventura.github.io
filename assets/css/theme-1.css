@@ -9548,7 +9548,7 @@ a.theme-btn-on-bg:active,
   border-radius: 0;
 }
 .navbar-dark .navbar-toggler-icon {
-  background: url("../images/bars.svg") no-repeat left top;
+  background: url("../images/icons/bars.svg") no-repeat left top;
   height: 20px;
   width: 24px;
 }
@@ -9881,7 +9881,7 @@ a.theme-btn-on-bg:active,
   display: inline-block;
   width: 30px;
   height: 30px;
-  background: url("../images/arrow-left.svg") no-repeat center center;
+  background: url("../images/icons/arrow-left.svg") no-repeat center center;
   background-size: contain;
 }
 .ekko-lightbox-nav-overlay a .arrow-right {
@@ -9890,7 +9890,7 @@ a.theme-btn-on-bg:active,
   display: inline-block;
   width: 30px;
   height: 30px;
-  background: url("../images/arrow-right.svg") no-repeat center center;
+  background: url("../images/icons/arrow-right.svg") no-repeat center center;
   background-size: contain;
 }
 .project-sidebar {
