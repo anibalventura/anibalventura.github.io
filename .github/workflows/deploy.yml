@@ -53,14 +53,6 @@ jobs:
       - name: Build with Next.js
         run: pnpm run build
 
-      - name: Check Next.js config files
-        run: |
-          echo "Checking Next.js config files:"
-          cat next.config.js
-
-      - name: List directory
-        run: ls -la
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
