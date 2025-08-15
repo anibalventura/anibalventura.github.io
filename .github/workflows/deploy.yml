@@ -53,21 +53,6 @@ jobs:
       - name: Build with Next.js
         run: pnpm run build
 
-      - name: Check build output
-        run: |
-          ls -la
-          if [ ! -d "out" ]; then
-            echo "out directory not found, checking .next"
-            ls -la .next/ || echo ".next not found either"
-            if [ -d ".next" ]; then
-              echo "Using .next directory as fallback"
-              cp -r .next out
-            fi
-          fi
-          echo "Contents of out directory:"
-          ls -la out/
-          echo "Checking for index.html:"
-          ls -la out/index.html || echo "index.html not found"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
