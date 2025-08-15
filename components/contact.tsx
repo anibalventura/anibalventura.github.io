@@ -66,7 +66,7 @@ export function Contact() {
                   <Button
                     variant="outline"
                     asChild
-                    className="w-full border-primary/20 hover:bg-primary/5 bg-transparent"
+                    className="w-full border-primary/20 hover:bg-primary/5 hover:text-foreground bg-transparent"
                   >
                     <a
                       href={contact.link}
