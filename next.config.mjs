@@ -13,7 +13,6 @@ const nextConfig = {
     trailingSlash: true,
     basePath: '',
     assetPrefix: '',
-    distDir: 'out',
 }
 
 export default nextConfig
