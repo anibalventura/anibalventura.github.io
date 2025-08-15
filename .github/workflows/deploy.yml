@@ -30,7 +30,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '22'
           cache: 'pnpm'
 
       - name: Setup Pages
@@ -53,6 +53,12 @@ jobs:
       - name: Build with Next.js
         run: pnpm run build
 
+      - name: Check if out directory exists
+        run: |
+          if [ ! -d "./out" ]; then
+            echo "Error: ./out directory does not exist. Make sure 'next export' is configured correctly."
+            exit 1
+          fi
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
