@@ -3,7 +3,7 @@
 import { useTranslations } from 'next-intl'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Mail, ExternalLink, Coffee, Linkedin } from "lucide-react"
+import { Mail, ExternalLink, Coffee, Linkedin, Github } from "lucide-react"
 
 export function Contact() {
   const t = useTranslations('contact')
@@ -17,7 +17,7 @@ export function Contact() {
       linkText: "contact@anibalventura.com",
     },
     {
-      icon: ExternalLink,
+      icon: Github,
       title: t('links.github.title'),
       description: t('links.github.description'),
       link: "https://github.com/anibalventura",

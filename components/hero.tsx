@@ -2,7 +2,7 @@
 
 import { useTranslations } from 'next-intl'
 import { Button } from "@/components/ui/button"
-import { ArrowDown, Mail, ExternalLink } from "lucide-react"
+import { ArrowDown, Mail, Github } from "lucide-react"
 
 export function Hero() {
   const t = useTranslations('hero')
@@ -77,7 +77,7 @@ export function Hero() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center"
               >
-                <ExternalLink className="mr-2 h-4 w-4" />
+                <Github className="mr-2 h-4 w-4" />
                 {t('viewGithub')}
               </a>
             </Button>
