@@ -1,6 +1,7 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Work_Sans, Open_Sans } from "next/font/google"
+import { IntlProvider } from '@/components/providers/intl-provider'
 import "./globals.css"
 
 const workSans = Work_Sans({
@@ -30,7 +31,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${workSans.variable} ${openSans.variable} antialiased`}>
-      <body className="font-sans">{children}</body>
+      <body className="font-sans">
+        <IntlProvider>
+          {children}
+        </IntlProvider>
+      </body>
     </html>
   )
 }

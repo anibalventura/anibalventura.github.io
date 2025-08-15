@@ -1,10 +1,12 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { useTranslations } from 'next-intl'
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 
 export function Header() {
+  const t = useTranslations('navigation')
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
@@ -40,22 +42,22 @@ export function Header() {
               onClick={() => scrollToSection("about")}
               className="text-foreground hover:text-primary transition-colors"
             >
-              About
+              {t('about')}
             </button>
             <button
               onClick={() => scrollToSection("tech-stack")}
               className="text-foreground hover:text-primary transition-colors"
             >
-              Tech Stack
+              {t('techStack')}
             </button>
             <button
               onClick={() => scrollToSection("contact")}
               className="text-foreground hover:text-primary transition-colors"
             >
-              Contact
+              {t('contact')}
             </button>
             <Button onClick={() => scrollToSection("contact")} className="bg-primary hover:bg-primary/90">
-              Let's Talk
+              {t('letsTalk')}
             </Button>
           </nav>
 
@@ -78,22 +80,22 @@ export function Header() {
                 onClick={() => scrollToSection("about")}
                 className="text-left text-foreground hover:text-primary transition-colors"
               >
-                About
+                {t('about')}
               </button>
               <button
                 onClick={() => scrollToSection("tech-stack")}
                 className="text-left text-foreground hover:text-primary transition-colors"
               >
-                Tech Stack
+                {t('techStack')}
               </button>
               <button
                 onClick={() => scrollToSection("contact")}
                 className="text-left text-foreground hover:text-primary transition-colors"
               >
-                Contact
+                {t('contact')}
               </button>
               <Button onClick={() => scrollToSection("contact")} className="bg-primary hover:bg-primary/90 w-fit">
-                Let's Talk
+                {t('letsTalk')}
               </Button>
             </div>
           </nav>

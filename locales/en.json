@@ -1,0 +1,87 @@
+{
+  "navigation": {
+    "about": "About",
+    "techStack": "Tech Stack",
+    "contact": "Contact",
+    "letsTalk": "Let's Talk"
+  },
+  "hero": {
+    "greeting": "Hi 👋🏽, I'm",
+    "name": "Anibal Ventura",
+    "title": "Backend & Swift/SwiftUI Developer",
+    "location": "from the Dominican Republic 🇩🇴",
+    "status": "Currently open to work",
+    "getInTouch": "Get In Touch",
+    "viewGithub": "View GitHub",
+    "scrollToAbout": "Scroll to about section"
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "Backend specialist and Swift developer passionate about creating robust, scalable solutions",
+    "highlights": {
+      "backend": {
+        "title": "Backend Specialist",
+        "description": "Strong focus on Java/Spring Boot, Python, and Node.js/NestJS for robust API design"
+      },
+      "swift": {
+        "title": "Swift & SwiftUI",
+        "description": "Passionate about building smooth, modern apps for iOS and macOS"
+      },
+      "cleanCode": {
+        "title": "Clean Code Advocate",
+        "description": "Focused on scalability and great developer experience"
+      },
+      "learning": {
+        "title": "Always Learning",
+        "description": "Currently exploring cloud-native architectures and Swift concurrency"
+      }
+    },
+    "description": "I'm a dedicated developer who believes in writing clean, maintainable code that scales. My experience spans from building robust backend systems to crafting beautiful iOS applications. I'm always excited to tackle new challenges and learn emerging technologies."
+  },
+  "techStack": {
+    "title": "Tech Stack",
+    "subtitle": "Technologies and tools I use to build robust, scalable applications",
+    "categories": {
+      "backend": {
+        "title": "Backend Development"
+      },
+      "swift": {
+        "title": "Swift & SwiftUI"
+      },
+      "tools": {
+        "title": "Tools & Others"
+      }
+    }
+  },
+  "contact": {
+    "title": "Let's Connect",
+    "subtitle": "I'm currently open to work and always interested in discussing new opportunities and projects",
+    "links": {
+      "email": {
+        "title": "Email",
+        "description": "Get in touch via email"
+      },
+      "github": {
+        "title": "GitHub",
+        "description": "Check out my code and projects"
+      },
+      "linkedin": {
+        "title": "LinkedIn",
+        "description": "Connect with me professionally"
+      },
+      "coffee": {
+        "title": "Buy me a coffee",
+        "description": "Support my work"
+      }
+    },
+    "cta": {
+      "title": "Ready to work together?",
+      "description": "I'm available for backend development, Swift/SwiftUI projects, and consulting opportunities.",
+      "button": "Start a Conversation"
+    }
+  },
+  "footer": {
+    "copyright": "© 2025 Anibal Ventura. Built with Next.js and Tailwind CSS.",
+    "location": "Backend & Swift/SwiftUI Developer from the Dominican Republic 🇩🇴"
+  }
+}

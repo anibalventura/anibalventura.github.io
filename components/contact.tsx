@@ -1,34 +1,39 @@
+"use client"
+
+import { useTranslations } from 'next-intl'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Mail, ExternalLink, Coffee, Linkedin } from "lucide-react"
 
 export function Contact() {
+  const t = useTranslations('contact')
+  
   const contactLinks = [
     {
       icon: Mail,
-      title: "Email",
-      description: "Get in touch via email",
+      title: t('links.email.title'),
+      description: t('links.email.description'),
       link: "mailto:contact@anibalventura.com",
       linkText: "contact@anibalventura.com",
     },
     {
       icon: ExternalLink,
-      title: "GitHub",
-      description: "Check out my code and projects",
+      title: t('links.github.title'),
+      description: t('links.github.description'),
       link: "https://github.com/anibalventura",
       linkText: "github.com/anibalventura",
     },
     {
       icon: Linkedin,
-      title: "LinkedIn",
-      description: "Connect with me professionally",
+      title: t('links.linkedin.title'),
+      description: t('links.linkedin.description'),
       link: "https://linkedin.com/in/anibalventura",
       linkText: "linkedin.com/in/anibalventura",
     },
     {
       icon: Coffee,
-      title: "Buy me a coffee",
-      description: "Support my work",
+      title: t('links.coffee.title'),
+      description: t('links.coffee.description'),
       link: "https://ko-fi.com/anibalventura",
       linkText: "ko-fi.com/anibalventura",
     },
@@ -39,9 +44,9 @@ export function Contact() {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">Let's Connect</h2>
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">{t('title')}</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              I'm currently open to work and always interested in discussing new opportunities and projects
+              {t('subtitle')}
             </p>
           </div>
 
@@ -81,14 +86,14 @@ export function Contact() {
           <div className="text-center mt-12">
             <Card className="bg-primary/5 border-primary/20">
               <CardContent className="p-8">
-                <h3 className="text-xl font-heading font-semibold text-foreground mb-4">Ready to work together?</h3>
+                <h3 className="text-xl font-heading font-semibold text-foreground mb-4">{t('cta.title')}</h3>
                 <p className="text-muted-foreground mb-6">
-                  I'm available for backend development, Swift/SwiftUI projects, and consulting opportunities.
+                  {t('cta.description')}
                 </p>
                 <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground" asChild>
                   <a href="mailto:contact@anibalventura.com">
                     <Mail className="mr-2 h-4 w-4" />
-                    Start a Conversation
+                    {t('cta.button')}
                   </a>
                 </Button>
               </CardContent>

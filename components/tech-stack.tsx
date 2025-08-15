@@ -1,10 +1,15 @@
+"use client"
+
+import { useTranslations } from 'next-intl'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 
 export function TechStack() {
+  const t = useTranslations('techStack')
+  
   const techCategories = [
     {
-      title: "Backend Development",
+      title: t('categories.backend.title'),
       icon: "🖥",
       technologies: [
         { name: "Node.js", color: "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300" },
@@ -20,7 +25,7 @@ export function TechStack() {
       ],
     },
     {
-      title: "Swift & SwiftUI",
+      title: t('categories.swift.title'),
       icon: "🍏",
       technologies: [
         { name: "Swift", color: "bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-300" },
@@ -31,7 +36,7 @@ export function TechStack() {
       ],
     },
     {
-      title: "Tools & Others",
+      title: t('categories.tools.title'),
       icon: "🔧",
       technologies: [
         { name: "Firebase", color: "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300" },
@@ -50,9 +55,9 @@ export function TechStack() {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">Tech Stack</h2>
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">{t('title')}</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Technologies and tools I use to build robust, scalable applications
+              {t('subtitle')}
             </p>
           </div>
 

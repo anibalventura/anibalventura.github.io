@@ -1,27 +1,32 @@
+"use client"
+
+import { useTranslations } from 'next-intl'
 import { Card, CardContent } from "@/components/ui/card"
 import { Code2, Smartphone, Rocket, BookOpen } from "lucide-react"
 
 export function About() {
+  const t = useTranslations('about')
+  
   const highlights = [
     {
       icon: Code2,
-      title: "Backend Specialist",
-      description: "Strong focus on Java/Spring Boot, Python, and Node.js/NestJS for robust API design",
+      title: t('highlights.backend.title'),
+      description: t('highlights.backend.description'),
     },
     {
       icon: Smartphone,
-      title: "Swift & SwiftUI",
-      description: "Passionate about building smooth, modern apps for iOS and macOS",
+      title: t('highlights.swift.title'),
+      description: t('highlights.swift.description'),
     },
     {
       icon: Rocket,
-      title: "Clean Code Advocate",
-      description: "Focused on scalability and great developer experience",
+      title: t('highlights.cleanCode.title'),
+      description: t('highlights.cleanCode.description'),
     },
     {
       icon: BookOpen,
-      title: "Always Learning",
-      description: "Currently exploring cloud-native architectures and Swift concurrency",
+      title: t('highlights.learning.title'),
+      description: t('highlights.learning.description'),
     },
   ]
 
@@ -30,9 +35,9 @@ export function About() {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">About Me</h2>
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">{t('title')}</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Backend specialist and Swift developer passionate about creating robust, scalable solutions
+              {t('subtitle')}
             </p>
           </div>
 
@@ -58,9 +63,7 @@ export function About() {
             <Card className="bg-card border-border max-w-2xl mx-auto">
               <CardContent className="p-8">
                 <p className="text-lg text-card-foreground leading-relaxed">
-                  I'm a dedicated developer who believes in writing clean, maintainable code that scales. My experience
-                  spans from building robust backend systems to crafting beautiful iOS applications. I'm always excited
-                  to tackle new challenges and learn emerging technologies.
+                  {t('description')}
                 </p>
               </CardContent>
             </Card>

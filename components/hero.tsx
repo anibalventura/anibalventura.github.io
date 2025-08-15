@@ -1,9 +1,12 @@
 "use client"
 
+import { useTranslations } from 'next-intl'
 import { Button } from "@/components/ui/button"
 import { ArrowDown, Mail, ExternalLink } from "lucide-react"
 
 export function Hero() {
+  const t = useTranslations('hero')
+  
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
     if (element) {
@@ -16,23 +19,23 @@ export function Hero() {
       <div className="container mx-auto px-4 text-center">
         <div className="max-w-4xl mx-auto">
           <div className="mb-6">
-            <span className="text-lg text-muted-foreground">Hi 👋🏽, I'm</span>
+            <span className="text-lg text-muted-foreground">{t('greeting')}</span>
           </div>
 
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-foreground mb-6">
-            Anibal Ventura
+            {t('name')}
           </h1>
 
           <h2 className="text-xl md:text-2xl lg:text-3xl text-primary font-heading font-semibold mb-8">
-            Backend & Swift/SwiftUI Developer
+            {t('title')}
           </h2>
 
-          <p className="text-lg md:text-xl text-muted-foreground mb-4">from the Dominican Republic 🇩🇴</p>
+          <p className="text-lg md:text-xl text-muted-foreground mb-4">{t('location')}</p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
             <div className="flex items-center gap-2 text-foreground">
               <span className="text-accent">🔭</span>
-              <span>Currently open to work</span>
+              <span>{t('status')}</span>
             </div>
           </div>
 
@@ -43,7 +46,7 @@ export function Hero() {
               onClick={() => scrollToSection("contact")}
             >
               <Mail className="mr-2 h-4 w-4" />
-              Get In Touch
+              {t('getInTouch')}
             </Button>
 
             <Button variant="outline" size="lg" asChild>
@@ -54,7 +57,7 @@ export function Hero() {
                 className="inline-flex items-center"
               >
                 <ExternalLink className="mr-2 h-4 w-4" />
-                View GitHub
+                {t('viewGithub')}
               </a>
             </Button>
           </div>
@@ -62,7 +65,7 @@ export function Hero() {
           <button
             onClick={() => scrollToSection("about")}
             className="animate-bounce text-primary hover:text-primary/80 transition-colors"
-            aria-label="Scroll to about section"
+            aria-label={t('scrollToAbout')}
           >
             <ArrowDown className="h-6 w-6" />
           </button>
