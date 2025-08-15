@@ -15,7 +15,7 @@ export function Hero() {
   }
 
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background to-secondary/30 pt-20">
+    <section className="min-h-screen flex items-center justify-center gradient-animated pt-20">
       <div className="container mx-auto px-4 text-center">
         <div className="max-w-4xl mx-auto">
           <div className="mb-6">

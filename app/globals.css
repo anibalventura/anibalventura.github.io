@@ -125,10 +125,81 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
+    /* Enhanced gradient background */
+    background: linear-gradient(135deg, 
+      oklch(1 0 0) 0%, 
+      oklch(0.98 0.01 230) 25%, 
+      oklch(0.99 0.005 240) 50%, 
+      oklch(0.985 0.008 220) 75%, 
+      oklch(1 0 0) 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
   }
+  
+  /* Dark mode gradient */
+  .dark body {
+    background: linear-gradient(135deg, 
+      oklch(0.145 0 0) 0%, 
+      oklch(0.15 0.01 230) 25%, 
+      oklch(0.148 0.008 240) 50%, 
+      oklch(0.152 0.006 220) 75%, 
+      oklch(0.145 0 0) 100%);
+    background-attachment: fixed;
+  }
+  
   /* Added heading font utility class */
   .font-heading {
     font-family: var(--font-heading);
+  }
+}
+
+/* Additional gradient utilities for sections */
+@layer utilities {
+  .gradient-bg-light {
+    background: linear-gradient(135deg, 
+      oklch(0.99 0.005 240) 0%, 
+      oklch(0.985 0.008 220) 50%, 
+      oklch(0.995 0.003 250) 100%);
+  }
+  
+  .gradient-bg-accent {
+    background: linear-gradient(135deg, 
+      oklch(0.506 0.177 230.989 / 0.05) 0%, 
+      oklch(0.576 0.196 230.989 / 0.03) 50%, 
+      oklch(0.506 0.177 230.989 / 0.08) 100%);
+  }
+  
+  /* Subtle animated gradient for hero section */
+  .gradient-animated {
+    background: linear-gradient(-45deg, 
+      oklch(0.99 0.005 240), 
+      oklch(0.985 0.008 220), 
+      oklch(0.995 0.003 250), 
+      oklch(0.98 0.01 230));
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+  }
+  
+  .dark .gradient-animated {
+    background: linear-gradient(-45deg, 
+      oklch(0.148 0.008 240), 
+      oklch(0.152 0.006 220), 
+      oklch(0.145 0.003 250), 
+      oklch(0.15 0.01 230));
+    background-size: 400% 400%;
+  }
+}
+
+/* Keyframes for gradient animation */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
