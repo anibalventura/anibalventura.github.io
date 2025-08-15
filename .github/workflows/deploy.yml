@@ -64,6 +64,10 @@ jobs:
               cp -r .next out
             fi
           fi
+          echo "Contents of out directory:"
+          ls -la out/
+          echo "Checking for index.html:"
+          ls -la out/index.html || echo "index.html not found"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
