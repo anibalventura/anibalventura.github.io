@@ -56,19 +56,10 @@ jobs:
       - name: Check Next.js config files
         run: |
           echo "Checking Next.js config files:"
-          ls -la next.config.*
-          echo "Content of next.config.js:"
-          cat next.config.js || echo "next.config.js not found"
-          echo "Content of next.config.mjs:"
-          cat next.config.mjs || echo "next.config.mjs not found"
+          cat next.config.js
 
-      - name: Remove duplicate config and use mjs
-        run: |
-          rm -f next.config.js
-          echo "Removed next.config.js, keeping next.config.mjs"
-
-      - name: List out directory
-        run: ls -la out/ || echo "out directory does not exist"
+      - name: List directory
+        run: ls -la
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
