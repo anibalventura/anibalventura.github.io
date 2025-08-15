@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import { useTranslations } from 'next-intl'
 import { Button } from "@/components/ui/button"
+import { LanguageSwitcher } from "@/components/language-switcher"
 import { Menu, X } from "lucide-react"
 
 export function Header() {
@@ -37,7 +38,7 @@ export function Header() {
           <h1 className="text-xl font-heading font-bold text-primary">Anibal Ventura</h1>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-6">
             <button
               onClick={() => scrollToSection("about")}
               className="text-foreground hover:text-primary transition-colors"
@@ -59,17 +60,20 @@ export function Header() {
             <Button onClick={() => scrollToSection("contact")} className="bg-primary hover:bg-primary/90">
               {t('letsTalk')}
             </Button>
+            <LanguageSwitcher />
           </nav>
 
-          {/* Mobile Menu Button */}
-          <Button
-            variant="ghost"
-            size="icon"
-            className="md:hidden"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </Button>
+          {/* Mobile Navigation */}
+          <div className="md:hidden flex items-center space-x-2">
+            <LanguageSwitcher />
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </Button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}

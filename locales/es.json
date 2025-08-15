@@ -1,0 +1,87 @@
+{
+  "navigation": {
+    "about": "Acerca de",
+    "techStack": "Tecnologías",
+    "contact": "Contacto",
+    "letsTalk": "Hablemos"
+  },
+  "hero": {
+    "greeting": "Hola 👋🏽, soy",
+    "name": "Anibal Ventura",
+    "title": "Desarrollador Backend & Swift/SwiftUI",
+    "location": "de República Dominicana 🇩🇴",
+    "status": "Actualmente disponible para trabajar",
+    "getInTouch": "Contactar",
+    "viewGithub": "Ver GitHub",
+    "scrollToAbout": "Ir a la sección acerca de"
+  },
+  "about": {
+    "title": "Acerca de Mí",
+    "subtitle": "Especialista en backend y desarrollador Swift apasionado por crear soluciones robustas y escalables",
+    "highlights": {
+      "backend": {
+        "title": "Especialista Backend",
+        "description": "Enfoque sólido en Java/Spring Boot, Python y Node.js/NestJS para diseño robusto de APIs"
+      },
+      "swift": {
+        "title": "Swift & SwiftUI",
+        "description": "Apasionado por crear aplicaciones fluidas y modernas para iOS y macOS"
+      },
+      "cleanCode": {
+        "title": "Defensor del Código Limpio",
+        "description": "Enfocado en escalabilidad y gran experiencia de desarrollador"
+      },
+      "learning": {
+        "title": "Siempre Aprendiendo",
+        "description": "Actualmente explorando arquitecturas nativas en la nube y concurrencia en Swift"
+      }
+    },
+    "description": "Soy un desarrollador dedicado que cree en escribir código limpio y mantenible que escale. Mi experiencia abarca desde la construcción de sistemas backend robustos hasta la creación de hermosas aplicaciones iOS. Siempre estoy emocionado de enfrentar nuevos desafíos y aprender tecnologías emergentes."
+  },
+  "techStack": {
+    "title": "Stack Tecnológico",
+    "subtitle": "Tecnologías y herramientas que uso para construir aplicaciones robustas y escalables",
+    "categories": {
+      "backend": {
+        "title": "Desarrollo Backend"
+      },
+      "swift": {
+        "title": "Swift & SwiftUI"
+      },
+      "tools": {
+        "title": "Herramientas y Otros"
+      }
+    }
+  },
+  "contact": {
+    "title": "Conectemos",
+    "subtitle": "Actualmente estoy disponible para trabajar y siempre interesado en discutir nuevas oportunidades y proyectos",
+    "links": {
+      "email": {
+        "title": "Email",
+        "description": "Contáctame por email"
+      },
+      "github": {
+        "title": "GitHub",
+        "description": "Revisa mi código y proyectos"
+      },
+      "linkedin": {
+        "title": "LinkedIn",
+        "description": "Conecta conmigo profesionalmente"
+      },
+      "coffee": {
+        "title": "Cómprame un café",
+        "description": "Apoya mi trabajo"
+      }
+    },
+    "cta": {
+      "title": "¿Listo para trabajar juntos?",
+      "description": "Estoy disponible para desarrollo backend, proyectos Swift/SwiftUI y oportunidades de consultoría.",
+      "button": "Iniciar una Conversación"
+    }
+  },
+  "footer": {
+    "copyright": "© 2025 Anibal Ventura. Construido con Next.js y Tailwind CSS.",
+    "location": "Desarrollador Backend & Swift/SwiftUI de República Dominicana 🇩🇴"
+  }
+}
