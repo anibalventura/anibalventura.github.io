@@ -15,8 +15,29 @@ export function Hero() {
   }
 
   return (
-    <section className="min-h-screen flex items-center justify-center gradient-animated pt-20">
-      <div className="container mx-auto px-4 text-center">
+    <section className="min-h-screen flex items-center justify-center gradient-animated dynamic-bg interactive-bg pt-20">
+      {/* Floating Particles */}
+      <div className="floating-particles">
+        <div className="particle particle-1"></div>
+        <div className="particle particle-2"></div>
+        <div className="particle particle-3"></div>
+        <div className="particle particle-4"></div>
+        <div className="particle particle-5"></div>
+      </div>
+
+      {/* Orbiting Elements */}
+      <div className="orbit-container">
+        <div className="orbit-slow"></div>
+        <div className="orbit-fast"></div>
+      </div>
+
+      {/* Sparkle Effects */}
+      <div className="sparkle sparkle-1"></div>
+      <div className="sparkle sparkle-2"></div>
+      <div className="sparkle sparkle-3"></div>
+      <div className="sparkle sparkle-4"></div>
+
+      <div className="container mx-auto px-4 text-center relative z-10">
         <div className="max-w-4xl mx-auto">
           <div className="mb-6">
             <span className="text-lg text-muted-foreground">{t('greeting')}</span>
