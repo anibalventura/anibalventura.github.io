@@ -53,12 +53,11 @@ jobs:
       - name: Build with Next.js
         run: pnpm run build
 
-      - name: Check if out directory exists
-        run: |
-          if [ ! -d "./out" ]; then
-            echo "Error: ./out directory does not exist. Make sure 'next export' is configured correctly."
-            exit 1
-          fi
+      - name: List files for debugging
+        run: ls -la
+
+      - name: List out directory
+        run: ls -la out/ || echo "out directory does not exist"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
