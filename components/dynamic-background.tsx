@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 
 interface Particle {
   id: number;
@@ -15,8 +15,7 @@ interface Particle {
 
 export function DynamicBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [particles, setParticles] = useState<Particle[]>([]);
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const particlesRef = useRef<Particle[]>([]);
   const animationRef = useRef<number>();
 
   useEffect(() => {
@@ -37,10 +36,8 @@ export function DynamicBackground() {
 
     // Mouse move handler
     const handleMouseMove = (e: MouseEvent) => {
-      setMousePos({ x: e.clientX, y: e.clientY });
-      
       // Create particles on mouse move
-      if (Math.random() < 0.3) {
+      if (Math.random() < 0.2) {
         const newParticle: Particle = {
           id: Date.now() + Math.random(),
           x: e.clientX + (Math.random() - 0.5) * 20,
@@ -52,7 +49,7 @@ export function DynamicBackground() {
           life: 60
         };
         
-        setParticles(prev => [...prev.slice(-50), newParticle]);
+        particlesRef.current = [...particlesRef.current.slice(-30), newParticle];
       }
     };
 
@@ -60,21 +57,19 @@ export function DynamicBackground() {
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
-      // Update and draw particles
-      setParticles(prev => {
-        return prev
-          .map(particle => ({
-            ...particle,
-            x: particle.x + particle.speedX,
-            y: particle.y + particle.speedY,
-            opacity: particle.opacity * 0.98,
-            life: particle.life - 1
-          }))
-          .filter(particle => particle.life > 0 && particle.opacity > 0.01);
-      });
+      // Update particles
+      particlesRef.current = particlesRef.current
+        .map(particle => ({
+          ...particle,
+          x: particle.x + particle.speedX,
+          y: particle.y + particle.speedY,
+          opacity: particle.opacity * 0.98,
+          life: particle.life - 1
+        }))
+        .filter(particle => particle.life > 0 && particle.opacity > 0.01);
 
       // Draw particles
-      particles.forEach(particle => {
+      particlesRef.current.forEach(particle => {
         ctx.save();
         ctx.globalAlpha = particle.opacity;
         ctx.fillStyle = getComputedStyle(document.documentElement)
@@ -86,15 +81,15 @@ export function DynamicBackground() {
       });
 
       // Draw connection lines between nearby particles
-      particles.forEach((particle1, i) => {
-        particles.slice(i + 1).forEach(particle2 => {
+      particlesRef.current.forEach((particle1, i) => {
+        particlesRef.current.slice(i + 1).forEach(particle2 => {
           const dx = particle1.x - particle2.x;
           const dy = particle1.y - particle2.y;
           const distance = Math.sqrt(dx * dx + dy * dy);
           
-          if (distance < 100) {
+          if (distance < 80) {
             ctx.save();
-            ctx.globalAlpha = (1 - distance / 100) * 0.2;
+            ctx.globalAlpha = (1 - distance / 80) * 0.15;
             ctx.strokeStyle = getComputedStyle(document.documentElement)
               .getPropertyValue('--color-primary') || '#3b82f6';
             ctx.lineWidth = 1;
@@ -120,7 +115,7 @@ export function DynamicBackground() {
         cancelAnimationFrame(animationRef.current);
       }
     };
-  }, [particles]);
+  }, []); // Empty dependency array - no more loop!
 
   return (
     <canvas
