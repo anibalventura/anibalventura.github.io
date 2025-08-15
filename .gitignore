@@ -2,6 +2,7 @@
 
 # AI
 /.claude
+
 # dependencies
 /node_modules
 
