@@ -20,8 +20,8 @@ const openSans = Open_Sans({
 })
 
 export const metadata: Metadata = {
-  title: "Anibal Ventura - Backend & Swift Developer",
-  description: "Backend specialist and Swift/SwiftUI developer from the Dominican Republic. Open to work.",
+  title: "Anibal Ventura - Backend & Apple Developer",
+  description: "Backend specialist and Apple developer from the Dominican Republic. Open to work.",
   generator: "v0.app",
 }
 
