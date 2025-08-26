@@ -8,7 +8,7 @@
   "hero": {
     "greeting": "Hola 👋🏽, soy",
     "name": "Anibal Ventura",
-    "title": "Desarrollador Backend & Swift/SwiftUI",
+    "title": "Desarrollador Backend & Apple",
     "location": "de República Dominicana 🇩🇴",
     "status": "Actualmente disponible para trabajar",
     "getInTouch": "Contactar",
@@ -17,14 +17,14 @@
   },
   "about": {
     "title": "Acerca de Mí",
-    "subtitle": "Especialista en backend y desarrollador Swift apasionado por crear soluciones robustas y escalables",
+    "subtitle": "Especialista en backend y desarrollador Apple apasionado por crear soluciones robustas y escalables",
     "highlights": {
       "backend": {
         "title": "Especialista Backend",
         "description": "Enfoque sólido en Java/Spring Boot, Python y Node.js/NestJS para diseño robusto de APIs"
       },
       "swift": {
-        "title": "Swift & SwiftUI",
+        "title": "Desarrollador Apple",
         "description": "Apasionado por crear aplicaciones fluidas y modernas para iOS y macOS"
       },
       "cleanCode": {
@@ -46,7 +46,7 @@
         "title": "Desarrollo Backend"
       },
       "swift": {
-        "title": "Swift & SwiftUI"
+        "title": "Desarrollo Apple"
       },
       "tools": {
         "title": "Herramientas y Otros"
@@ -76,12 +76,12 @@
     },
     "cta": {
       "title": "¿Listo para trabajar juntos?",
-      "description": "Estoy disponible para desarrollo backend, proyectos Swift/SwiftUI y oportunidades de consultoría.",
+      "description": "Estoy disponible para desarrollo backend, proyectos Apple y oportunidades de consultoría.",
       "button": "Iniciar una Conversación"
     }
   },
   "footer": {
     "copyright": "© 2025 Anibal Ventura. Construido con Next.js y Tailwind CSS.",
-    "location": "Desarrollador Backend & Swift/SwiftUI de República Dominicana 🇩🇴"
+    "location": "Desarrollador Backend & Apple de República Dominicana 🇩🇴"
   }
 }
