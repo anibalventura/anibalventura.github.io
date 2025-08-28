@@ -226,10 +226,6 @@ const nextConfig = {
 2. Add translations to locale files
 3. Import and use in `app/page.tsx`
 
-## 📝 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/anibalventura/anibalventura.github.io/issues).
@@ -241,6 +237,12 @@ Contributions, issues, and feature requests are welcome! Feel free to check the 
 - Test responsive design
 - Ensure accessibility standards
 
+## 📝 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
 ---
 
 ⭐ **Star this repository if you found it helpful!**
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/anibalventura)
