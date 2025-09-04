@@ -10,9 +10,6 @@ export function Footer() {
       <div className="container mx-auto px-4">
         <div className="text-center">
           <p className="text-muted-foreground">{t('copyright')}</p>
-          <p className="text-sm text-muted-foreground mt-2">
-            {t('location')}
-          </p>
         </div>
       </div>
     </footer>

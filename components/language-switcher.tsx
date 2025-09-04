@@ -10,11 +10,6 @@ const localeNames = {
   es: 'Español'
 } as const;
 
-const localeFlags = {
-  en: '🇺🇸',
-  es: '🇪🇸'
-} as const;
-
 export function LanguageSwitcher() {
   const { locale, setLocale, availableLocales } = useLocale();
   const [isOpen, setIsOpen] = useState(false);
@@ -33,8 +28,8 @@ export function LanguageSwitcher() {
         className="flex items-center gap-2 text-foreground hover:text-primary"
       >
         <Globe className="h-4 w-4" />
-        <span className="hidden sm:inline">{localeFlags[locale]} {localeNames[locale]}</span>
-        <span className="sm:hidden">{localeFlags[locale]}</span>
+        <span className="hidden sm:inline">{localeNames[locale]}</span>
+        <span className="sm:hidden">{locale.toUpperCase()}</span>
         <ChevronDown className="h-3 w-3" />
       </Button>
       
@@ -56,7 +51,6 @@ export function LanguageSwitcher() {
                   locale === localeOption ? 'bg-secondary/50' : ''
                 }`}
               >
-                <span>{localeFlags[localeOption]}</span>
                 <span>{localeNames[localeOption]}</span>
               </button>
             ))}

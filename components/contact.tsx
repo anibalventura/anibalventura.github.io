@@ -10,13 +10,6 @@ export function Contact() {
   
   const contactLinks = [
     {
-      icon: Mail,
-      title: t('links.email.title'),
-      description: t('links.email.description'),
-      link: "mailto:contact@anibalventura.com",
-      linkText: "contact@anibalventura.com",
-    },
-    {
       icon: Github,
       title: t('links.github.title'),
       description: t('links.github.description'),
@@ -31,12 +24,19 @@ export function Contact() {
       linkText: "linkedin.com/in/anibalventura",
     },
     {
+      icon: Mail,
+      title: t('links.email.title'),
+      description: t('links.email.description'),
+      link: "mailto:contact@anibalventura.com",
+      linkText: "contact@anibalventura.com",
+    },
+    {
       icon: Coffee,
       title: t('links.coffee.title'),
       description: t('links.coffee.description'),
       link: "https://ko-fi.com/anibalventura",
       linkText: "ko-fi.com/anibalventura",
-    },
+    }
   ]
 
   return (

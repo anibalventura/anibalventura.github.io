@@ -6,10 +6,10 @@
     "letsTalk": "Let's Talk"
   },
   "hero": {
-    "greeting": "Hi 👋🏽, I'm",
+    "greeting": "Hi, I'm",
     "name": "Anibal Ventura",
     "title": "Backend & Apple Developer",
-    "location": "from the Dominican Republic 🇩🇴",
+    "location": "from the Dominican Republic",
     "status": "Currently open to work",
     "getInTouch": "Get In Touch",
     "viewGithub": "View GitHub",
@@ -81,7 +81,6 @@
     }
   },
   "footer": {
-    "copyright": "© 2025 Anibal Ventura. Built with Next.js and Tailwind CSS.",
-    "location": "Backend & Apple Developer from the Dominican Republic 🇩🇴"
+    "copyright": "© 2025 Anibal Ventura"
   }
 }
