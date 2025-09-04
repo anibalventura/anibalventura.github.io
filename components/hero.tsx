@@ -2,7 +2,7 @@
 
 import { useTranslations } from 'next-intl'
 import { Button } from "@/components/ui/button"
-import { ArrowDown, Mail, Github } from "lucide-react"
+import { ArrowDown, Mail, Github, Hand, Briefcase, MapPin } from "lucide-react"
 
 export function Hero() {
   const t = useTranslations('hero')
@@ -40,7 +40,10 @@ export function Hero() {
       <div className="container mx-auto px-4 text-center relative z-10">
         <div className="max-w-4xl mx-auto">
           <div className="mb-6">
-            <span className="text-lg text-muted-foreground">{t('greeting')}</span>
+            <span className="text-lg text-muted-foreground inline-flex items-center">
+              {t('greeting')}
+              <Hand className="ml-2 h-5 w-5" />
+            </span>
           </div>
 
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-foreground mb-6">
@@ -51,11 +54,14 @@ export function Hero() {
             {t('title')}
           </h2>
 
-          <p className="text-lg md:text-xl text-muted-foreground mb-4">{t('location')}</p>
+          <p className="text-lg md:text-xl text-muted-foreground mb-4 inline-flex items-center">
+            <MapPin className="mr-2 h-5 w-5" />
+            {t('location')}
+          </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
             <div className="flex items-center gap-2 text-foreground">
-              <span className="text-accent">🔭</span>
+              <Briefcase className="h-5 w-5 text-accent" />
               <span>{t('status')}</span>
             </div>
           </div>

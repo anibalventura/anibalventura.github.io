@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { Server, Apple, Wrench } from 'lucide-react'
 
 export function TechStack() {
   const t = useTranslations('techStack')
@@ -10,7 +11,7 @@ export function TechStack() {
   const techCategories = [
     {
       title: t('categories.backend.title'),
-      icon: "🖥",
+      icon: <Server className="h-6 w-6" />,
       technologies: [
         { name: "Node.js", color: "bg-primary/10 text-primary border border-primary/20" },
         { name: "Express.js", color: "bg-secondary/80 text-secondary-foreground border border-border" },
@@ -26,7 +27,7 @@ export function TechStack() {
     },
     {
       title: t('categories.swift.title'),
-      icon: "🍏",
+      icon: <Apple className="h-6 w-6" />,
       technologies: [
         { name: "Swift", color: "bg-accent/15 text-accent border border-accent/25" },
         { name: "SwiftUI", color: "bg-primary/15 text-primary border border-primary/25" },
@@ -37,7 +38,7 @@ export function TechStack() {
     },
     {
       title: t('categories.tools.title'),
-      icon: "🔧",
+      icon: <Wrench className="h-6 w-6" />,
       technologies: [
         { name: "Firebase", color: "bg-accent/10 text-accent border border-accent/20" },
         { name: "IntelliJ IDEA", color: "bg-primary/15 text-primary border border-primary/25" },
