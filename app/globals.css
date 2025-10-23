@@ -152,6 +152,23 @@
   .font-heading {
     font-family: var(--font-heading);
   }
+
+  /* Accessible skip link */
+  .skip-link {
+    position: fixed;
+    top: -40px;
+    left: 16px;
+    z-index: 70;
+    background: oklch(0.65 0.25 230);
+    color: oklch(0.05 0.01 240);
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: top 0.15s ease;
+  }
+  .skip-link:focus {
+    top: 12px;
+    outline: 3px solid oklch(0.65 0.25 230 / 0.4);
+  }
 }
 
 /* Additional gradient utilities for sections */

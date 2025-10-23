@@ -40,7 +40,7 @@ export function Contact() {
   ]
 
   return (
-    <section id="contact" className="py-20 gradient-bg-light">
+    <section id="contact" className="py-20 gradient-bg-light scroll-mt-24">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
@@ -71,7 +71,7 @@ export function Contact() {
                     <a
                       href={contact.link}
                       target="_blank"
-                      rel="noopener noreferrer"
+                      rel={contact.link.includes('github.com') || contact.link.includes('linkedin.com') ? 'me noopener noreferrer' : 'noopener noreferrer'}
                       className="inline-flex items-center justify-center"
                     >
                       {contact.linkText}

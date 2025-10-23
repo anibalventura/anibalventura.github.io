@@ -7,7 +7,7 @@ import { Footer } from "@/components/footer"
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main id="main" tabIndex={-1} className="min-h-screen focus:outline-none">
       <Header />
       <Hero />
       <About />
