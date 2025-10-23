@@ -1,4 +1,7 @@
 {
+  "site": {
+    "title": "Anibal Ventura – Backend & Apple Developer"
+  },
   "navigation": {
     "about": "About",
     "techStack": "Tech Stack",

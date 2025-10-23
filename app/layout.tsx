@@ -4,6 +4,7 @@ import { Work_Sans, Open_Sans } from "next/font/google"
 import { IntlProvider } from '@/components/providers/intl-provider'
 import { DynamicBackground } from '@/components/dynamic-background'
 import { HtmlLangSync } from '@/components/locale-lang'
+import { TitleSync } from '@/components/title-sync'
 import { SkipLink } from '@/components/skip-link'
 import { ScrollProgress } from '@/components/scroll-progress'
 import { BackToTop } from '@/components/back-to-top'
@@ -81,6 +82,7 @@ export default function RootLayout({
         <DynamicBackground />
         <IntlProvider>
           <HtmlLangSync />
+          <TitleSync />
           {children}
         </IntlProvider>
         <BackToTop />
