@@ -171,15 +171,30 @@
   }
   
   /* Subtle animated gradient for hero section */
+.gradient-animated {
+  background: linear-gradient(-45deg, 
+    oklch(0.07 0.03 240), 
+    oklch(0.09 0.035 220), 
+    oklch(0.08 0.032 250), 
+    oklch(0.10 0.038 230));
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
   .gradient-animated {
-    background: linear-gradient(-45deg, 
-      oklch(0.07 0.03 240), 
-      oklch(0.09 0.035 220), 
-      oklch(0.08 0.032 250), 
-      oklch(0.10 0.038 230));
-    background-size: 400% 400%;
-    animation: gradientShift 15s ease infinite;
+    animation: none !important;
   }
+  .floating-particles,
+  .orbit-container,
+  .sparkle {
+    display: none !important;
+  }
+  .animate-bounce {
+    animation: none !important;
+  }
+}
   
   .dark .gradient-animated {
     background: linear-gradient(-45deg, 
