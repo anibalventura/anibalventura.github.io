@@ -31,7 +31,7 @@ export function About() {
   ]
 
   return (
-    <section id="about" className="py-20 gradient-bg-accent dynamic-bg">
+    <section id="about" className="py-20 gradient-bg-accent dynamic-bg scroll-mt-24">
       {/* Subtle floating particles for about section */}
       <div className="floating-particles">
         <div className="particle particle-3"></div>

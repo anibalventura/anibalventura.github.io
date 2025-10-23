@@ -10,6 +10,7 @@ export function Header() {
   const t = useTranslations('navigation')
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState<string>('')
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,6 +18,33 @@ export function Header() {
     }
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
+  // Observe section visibility to highlight active item
+  useEffect(() => {
+    const sections = [
+      { id: 'about' },
+      { id: 'tech-stack' },
+      { id: 'projects' },
+      { id: 'contact' },
+    ]
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0]
+        if (visible?.target?.id) {
+          setActiveSection(visible.target.id)
+        }
+      },
+      { rootMargin: '-30% 0px -60% 0px', threshold: [0.25, 0.5, 0.75] }
+    )
+
+    sections.forEach(({ id }) => {
+      const el = document.getElementById(id)
+      if (el) observer.observe(el)
+    })
+    return () => observer.disconnect()
   }, [])
 
   const scrollToSection = (sectionId: string) => {
@@ -38,25 +66,39 @@ export function Header() {
           <h1 className="text-xl font-heading font-bold text-primary">Anibal Ventura</h1>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-6">
-            <button
-              onClick={() => scrollToSection("about")}
-              className="text-foreground hover:text-primary transition-colors"
+          <nav aria-label="Primary" className="hidden md:flex items-center space-x-6">
+            <a
+              href="#about"
+              onClick={(e) => { e.preventDefault(); scrollToSection('about') }}
+              className={`text-foreground hover:text-primary transition-colors ${activeSection === 'about' ? 'text-primary font-semibold' : ''}`}
+              aria-current={activeSection === 'about' ? 'page' : undefined}
             >
               {t('about')}
-            </button>
-            <button
-              onClick={() => scrollToSection("tech-stack")}
-              className="text-foreground hover:text-primary transition-colors"
+            </a>
+            <a
+              href="#tech-stack"
+              onClick={(e) => { e.preventDefault(); scrollToSection('tech-stack') }}
+              className={`text-foreground hover:text-primary transition-colors ${activeSection === 'tech-stack' ? 'text-primary font-semibold' : ''}`}
+              aria-current={activeSection === 'tech-stack' ? 'page' : undefined}
             >
               {t('techStack')}
-            </button>
-            <button
-              onClick={() => scrollToSection("contact")}
-              className="text-foreground hover:text-primary transition-colors"
+            </a>
+            <a
+              href="#projects"
+              onClick={(e) => { e.preventDefault(); scrollToSection('projects') }}
+              className={`text-foreground hover:text-primary transition-colors ${activeSection === 'projects' ? 'text-primary font-semibold' : ''}`}
+              aria-current={activeSection === 'projects' ? 'page' : undefined}
+            >
+              {t('projects')}
+            </a>
+            <a
+              href="#contact"
+              onClick={(e) => { e.preventDefault(); scrollToSection('contact') }}
+              className={`text-foreground hover:text-primary transition-colors ${activeSection === 'contact' ? 'text-primary font-semibold' : ''}`}
+              aria-current={activeSection === 'contact' ? 'page' : undefined}
             >
               {t('contact')}
-            </button>
+            </a>
             <Button onClick={() => scrollToSection("contact")} className="bg-primary hover:bg-primary/90">
               {t('letsTalk')}
             </Button>
@@ -78,26 +120,40 @@ export function Header() {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <nav className="md:hidden mt-4 pb-4 border-t border-border pt-4">
+          <nav aria-label="Primary" className="md:hidden mt-4 pb-4 border-t border-border pt-4">
             <div className="flex flex-col space-y-4">
-              <button
-                onClick={() => scrollToSection("about")}
-                className="text-left text-foreground hover:text-primary transition-colors"
+              <a
+                href="#about"
+                onClick={(e) => { e.preventDefault(); scrollToSection('about') }}
+                className={`text-left text-foreground hover:text-primary transition-colors ${activeSection === 'about' ? 'text-primary font-semibold' : ''}`}
+                aria-current={activeSection === 'about' ? 'page' : undefined}
               >
                 {t('about')}
-              </button>
-              <button
-                onClick={() => scrollToSection("tech-stack")}
-                className="text-left text-foreground hover:text-primary transition-colors"
+              </a>
+              <a
+                href="#tech-stack"
+                onClick={(e) => { e.preventDefault(); scrollToSection('tech-stack') }}
+                className={`text-left text-foreground hover:text-primary transition-colors ${activeSection === 'tech-stack' ? 'text-primary font-semibold' : ''}`}
+                aria-current={activeSection === 'tech-stack' ? 'page' : undefined}
               >
                 {t('techStack')}
-              </button>
-              <button
-                onClick={() => scrollToSection("contact")}
-                className="text-left text-foreground hover:text-primary transition-colors"
+              </a>
+              <a
+                href="#projects"
+                onClick={(e) => { e.preventDefault(); scrollToSection('projects') }}
+                className={`text-left text-foreground hover:text-primary transition-colors ${activeSection === 'projects' ? 'text-primary font-semibold' : ''}`}
+                aria-current={activeSection === 'projects' ? 'page' : undefined}
+              >
+                {t('projects')}
+              </a>
+              <a
+                href="#contact"
+                onClick={(e) => { e.preventDefault(); scrollToSection('contact') }}
+                className={`text-left text-foreground hover:text-primary transition-colors ${activeSection === 'contact' ? 'text-primary font-semibold' : ''}`}
+                aria-current={activeSection === 'contact' ? 'page' : undefined}
               >
                 {t('contact')}
-              </button>
+              </a>
               <Button onClick={() => scrollToSection("contact")} className="bg-primary hover:bg-primary/90 w-fit">
                 {t('letsTalk')}
               </Button>

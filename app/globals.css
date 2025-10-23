@@ -152,6 +152,23 @@
   .font-heading {
     font-family: var(--font-heading);
   }
+
+  /* Accessible skip link */
+  .skip-link {
+    position: fixed;
+    top: -40px;
+    left: 16px;
+    z-index: 70;
+    background: oklch(0.65 0.25 230);
+    color: oklch(0.05 0.01 240);
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: top 0.15s ease;
+  }
+  .skip-link:focus {
+    top: 12px;
+    outline: 3px solid oklch(0.65 0.25 230 / 0.4);
+  }
 }
 
 /* Additional gradient utilities for sections */
@@ -171,15 +188,30 @@
   }
   
   /* Subtle animated gradient for hero section */
+.gradient-animated {
+  background: linear-gradient(-45deg, 
+    oklch(0.07 0.03 240), 
+    oklch(0.09 0.035 220), 
+    oklch(0.08 0.032 250), 
+    oklch(0.10 0.038 230));
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
   .gradient-animated {
-    background: linear-gradient(-45deg, 
-      oklch(0.07 0.03 240), 
-      oklch(0.09 0.035 220), 
-      oklch(0.08 0.032 250), 
-      oklch(0.10 0.038 230));
-    background-size: 400% 400%;
-    animation: gradientShift 15s ease infinite;
+    animation: none !important;
   }
+  .floating-particles,
+  .orbit-container,
+  .sparkle {
+    display: none !important;
+  }
+  .animate-bounce {
+    animation: none !important;
+  }
+}
   
   .dark .gradient-animated {
     background: linear-gradient(-45deg, 

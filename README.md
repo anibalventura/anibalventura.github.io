@@ -112,10 +112,13 @@ Navigate to [http://localhost:3000](http://localhost:3000)
 ```bash
 pnpm dev       # Start development server
 pnpm build     # Build for production (static export)
-pnpm start     # Start production server (after build)
+pnpm start     # Next.js server (not used for static export)
 pnpm lint      # Run ESLint
 pnpm export    # Export static files (included in build)
+pnpm preview   # Build and serve ./out for local preview
 ```
+
+For static export preview locally, use `pnpm preview` which builds and serves the `out/` directory.
 
 ## 📁 Project Structure
 
@@ -174,6 +177,9 @@ The site automatically deploys to GitHub Pages when changes are pushed to the `m
 pnpm build
 
 # Output will be in the 'out' directory
+# Optionally preview locally
+pnpm preview
+
 # Push to main branch to trigger deployment
 ```
 
