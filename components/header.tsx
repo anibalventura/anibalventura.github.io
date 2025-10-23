@@ -25,6 +25,7 @@ export function Header() {
     const sections = [
       { id: 'about' },
       { id: 'tech-stack' },
+      { id: 'projects' },
       { id: 'contact' },
     ]
     const observer = new IntersectionObserver(
@@ -83,6 +84,14 @@ export function Header() {
               {t('techStack')}
             </a>
             <a
+              href="#projects"
+              onClick={(e) => { e.preventDefault(); scrollToSection('projects') }}
+              className={`text-foreground hover:text-primary transition-colors ${activeSection === 'projects' ? 'text-primary font-semibold' : ''}`}
+              aria-current={activeSection === 'projects' ? 'page' : undefined}
+            >
+              {t('projects')}
+            </a>
+            <a
               href="#contact"
               onClick={(e) => { e.preventDefault(); scrollToSection('contact') }}
               className={`text-foreground hover:text-primary transition-colors ${activeSection === 'contact' ? 'text-primary font-semibold' : ''}`}
@@ -128,6 +137,14 @@ export function Header() {
                 aria-current={activeSection === 'tech-stack' ? 'page' : undefined}
               >
                 {t('techStack')}
+              </a>
+              <a
+                href="#projects"
+                onClick={(e) => { e.preventDefault(); scrollToSection('projects') }}
+                className={`text-left text-foreground hover:text-primary transition-colors ${activeSection === 'projects' ? 'text-primary font-semibold' : ''}`}
+                aria-current={activeSection === 'projects' ? 'page' : undefined}
+              >
+                {t('projects')}
               </a>
               <a
                 href="#contact"

@@ -5,6 +5,7 @@
   "navigation": {
     "about": "Acerca de",
     "techStack": "Tecnologías",
+    "projects": "Proyectos",
     "contact": "Contacto",
     "letsTalk": "Hablemos"
   },
@@ -55,6 +56,13 @@
         "title": "Herramientas y Otros"
       }
     }
+  },
+  "projects": {
+    "title": "Proyectos Destacados",
+    "subtitle": "Algunos proyectos de código abierto que mantengo o a los que contribuyo.",
+    "viewRepo": "Ver en GitHub",
+    "noDescription": "Sin descripción.",
+    "error": "No se pudieron cargar algunos detalles del proyecto."
   },
   "contact": {
     "title": "Conectemos",

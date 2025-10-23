@@ -5,6 +5,7 @@
   "navigation": {
     "about": "About",
     "techStack": "Tech Stack",
+    "projects": "Projects",
     "contact": "Contact",
     "letsTalk": "Let's Talk"
   },
@@ -55,6 +56,13 @@
         "title": "Tools & Others"
       }
     }
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "subtitle": "A few open-source projects and code I maintain or contribute to.",
+    "viewRepo": "View on GitHub",
+    "noDescription": "No description provided.",
+    "error": "Some project details could not be loaded."
   },
   "contact": {
     "title": "Let's Connect",
