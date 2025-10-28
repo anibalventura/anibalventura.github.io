@@ -135,7 +135,7 @@ For static export preview locally, use `pnpm preview` which builds and serves th
 
 ## 📁 Project Structure
 
-```
+```text
 ├── app/                      # Next.js App Router
 │   ├── globals.css          # Global styles and theme variables
 │   ├── layout.tsx           # Root layout with providers
