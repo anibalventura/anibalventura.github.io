@@ -25,12 +25,14 @@ A modern, interactive portfolio website showcasing my software development skill
 ## 🛠️ Tech Stack
 
 ### Core Technologies
+
 - **Framework:** Next.js 15.2.4 with App Router
 - **Language:** TypeScript 5.0
 - **Styling:** Tailwind CSS v4.1.9
 - **Package Manager:** pnpm v9
 
 ### Key Libraries
+
 - **UI Components:** Radix UI primitives
 - **Icons:** Lucide React
 - **Internationalization:** next-intl
@@ -38,6 +40,7 @@ A modern, interactive portfolio website showcasing my software development skill
 - **Utilities:** clsx, tailwind-merge, class-variance-authority
 
 ### Deployment
+
 - **Platform:** GitHub Pages
 - **CI/CD:** GitHub Actions
 - **Build:** Static export optimized for GitHub Pages
@@ -52,29 +55,34 @@ A modern, interactive portfolio website showcasing my software development skill
 ## 🌍 Internationalization
 
 The site supports multiple languages with:
+
 - **Automatic Detection** - Browser language preference detection
 - **Manual Switching** - Language switcher component (when multiple languages are available)
 - **Structured Translations** - JSON-based translation files in `/locales`
 - **Client-side Rendering** - Dynamic locale loading with localStorage persistence
 
 ### Supported Languages
+
 - 🇺🇸 English (en)
 - 🇪🇸 Spanish (es)
 
 ## 🎨 Design System
 
 ### Color Palette
+
 - **Primary:** Blue shades using OKLCH color space
 - **Background:** Deep dark blue gradients
 - **Text:** High contrast for optimal readability
 - **Accents:** Complementary blue tones for highlights
 
 ### Typography
+
 - **Headings:** Work Sans font family
 - **Body:** Open Sans font family
 - **Responsive:** Fluid typography scaling
 
 ### Interactive Elements
+
 - **Particle System** - Mouse-following canvas animation
 - **Floating Particles** - CSS-animated background elements
 - **Sparkle Effects** - Star-shaped decorative animations
@@ -83,29 +91,34 @@ The site supports multiple languages with:
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - Node.js 18 or later
 - pnpm (recommended package manager)
 
 ### Installation
 
 1. **Clone the repository:**
-```bash
-git clone https://github.com/anibalventura/anibalventura.github.io.git
-cd anibalventura.github.io
-```
+
+    ```bash
+    git clone https://github.com/anibalventura/anibalventura.github.io.git
+    cd anibalventura.github.io
+    ```
 
 2. **Install dependencies:**
-```bash
-pnpm install
-```
+
+    ```bash
+    pnpm install
+    ```
 
 3. **Start development server:**
-```bash
-pnpm dev
-```
+
+    ```bash
+    pnpm dev
+    ```
 
 4. **Open your browser:**
-Navigate to [http://localhost:3000](http://localhost:3000)
+
+    Navigate to [http://localhost:3000](http://localhost:3000)
 
 ### Available Scripts
 
@@ -162,9 +175,11 @@ For static export preview locally, use `pnpm preview` which builds and serves th
 ## 🚀 Deployment
 
 ### Automatic Deployment
+
 The site automatically deploys to GitHub Pages when changes are pushed to the `main` branch.
 
 **Deployment Process:**
+
 1. **Trigger:** Push to `main` branch
 2. **Build:** Next.js static export with pnpm
 3. **Deploy:** Upload to GitHub Pages
@@ -184,6 +199,7 @@ pnpm preview
 ```
 
 ### GitHub Pages Configuration
+
 1. Repository Settings → Pages
 2. Source: "GitHub Actions"
 3. Workflow: `.github/workflows/deploy.yml`
@@ -191,6 +207,7 @@ pnpm preview
 ## 🔧 Configuration
 
 ### Next.js Configuration (`next.config.js`)
+
 ```javascript
 const nextConfig = {
   output: 'export',
@@ -202,6 +219,7 @@ const nextConfig = {
 ```
 
 ### Tailwind CSS Configuration
+
 - Custom color variables using OKLCH
 - Animation utilities and keyframes
 - Responsive design system
@@ -218,16 +236,19 @@ const nextConfig = {
 ## 🧪 Development Tips
 
 ### Adding New Translations
+
 1. Update translation files in `/locales/`
 2. Use the `useTranslations` hook in components
 3. Follow the nested structure for organization
 
 ### Customizing Animations
+
 - Modify keyframes in `globals.css`
 - Adjust particle system in `dynamic-background.tsx`
 - Update color variables for theme changes
 
 ### Adding New Sections
+
 1. Create component in `/components/`
 2. Add translations to locale files
 3. Import and use in `app/page.tsx`
@@ -237,6 +258,7 @@ const nextConfig = {
 Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/anibalventura/anibalventura.github.io/issues).
 
 ### Development Guidelines
+
 - Follow TypeScript best practices
 - Maintain component modularity
 - Update translations for new features
