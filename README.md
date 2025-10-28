@@ -47,10 +47,12 @@ A modern, interactive portfolio website showcasing my software development skill
 
 ## 🎯 Sections
 
-1. **Hero Section** - Introduction with animated background effects
-2. **About Section** - Professional background and expertise highlights  
-3. **Tech Stack Section** - Organized by categories (Backend, Swift/iOS, Tools)
-4. **Contact Section** - Multiple ways to connect with hover effects
+1. **Hero** - Introduction with animated background effects
+2. **About** - Professional background and expertise highlights
+3. **Tech Stack** - Organized by categories (Backend, Swift/iOS, Tools)
+4. **Projects** - Selected work with links and details
+5. **Contact** - Multiple ways to connect
+6. **Footer** - Quick links and copyright
 
 ## 🌍 Internationalization
 
@@ -136,40 +138,62 @@ For static export preview locally, use `pnpm preview` which builds and serves th
 ## 📁 Project Structure
 
 ```text
-├── app/                      # Next.js App Router
-│   ├── globals.css          # Global styles and theme variables
-│   ├── layout.tsx           # Root layout with providers
-│   └── page.tsx             # Home page component
-├── components/              # React components
-│   ├── ui/                  # Base UI components
-│   │   ├── badge.tsx        # Technology badges
-│   │   ├── button.tsx       # Interactive buttons
-│   │   ├── card.tsx         # Content cards
-│   │   └── toast.tsx        # Toast notifications
-│   ├── providers/           # Context providers
-│   │   └── intl-provider.tsx # Internationalization provider
-│   ├── about.tsx            # About section
-│   ├── contact.tsx          # Contact section
-│   ├── dynamic-background.tsx # Particle animation system
-│   ├── header.tsx           # Navigation header
-│   ├── hero.tsx             # Hero section
-│   ├── language-switcher.tsx # Language selection
-│   └── tech-stack.tsx       # Technology showcase
-├── contexts/                # React contexts
-│   └── locale-context.tsx   # Locale management
-├── lib/                     # Utility functions
-│   └── locale.ts            # Locale detection and loading
-├── locales/                 # Translation files
-│   ├── en.json             # English translations
-│   └── es.json             # Spanish translations
-├── public/                  # Static assets
-│   └── CNAME               # GitHub Pages domain config
-├── .github/workflows/       # CI/CD pipelines
-│   └── deploy.yml          # Deployment workflow
-├── next.config.js          # Next.js configuration
-├── package.json            # Dependencies and scripts
-├── tailwind.config.ts      # Tailwind CSS configuration
-└── tsconfig.json           # TypeScript configuration
+├── app/                         # Next.js App Router
+│   ├── globals.css              # Global styles, theme, utilities
+│   ├── layout.tsx               # Root layout, fonts, providers
+│   ├── page.tsx                 # Home page composition
+│   ├── robots.ts                # Robots.txt route
+│   └── sitemap.ts               # Sitemap route
+├── components/                  # React components
+│   ├── ui/                      # Base UI components
+│   │   ├── badge.tsx
+│   │   ├── button.tsx
+│   │   ├── card.tsx
+│   │   ├── toast.tsx
+│   │   ├── toaster.tsx
+│   │   └── use-toast.ts
+│   ├── providers/
+│   │   └── intl-provider.tsx    # Internationalization provider
+│   ├── about.tsx                # About section
+│   ├── contact.tsx              # Contact section
+│   ├── dynamic-background.tsx   # Particle/visual effects
+│   ├── footer.tsx               # Footer
+│   ├── header.tsx               # Header / nav
+│   ├── hero.tsx                 # Hero section
+│   ├── language-switcher.tsx    # Language selection UI
+│   ├── locale-lang.tsx          # Sync <html lang>
+│   ├── back-to-top.tsx          # Floating back-to-top button
+│   ├── projects.tsx             # Projects section
+│   ├── scroll-progress.tsx      # Reading progress bar
+│   ├── skip-link.tsx            # Accessibility skip link
+│   ├── title-sync.tsx           # Dynamic <title>
+│   └── tech-stack.tsx           # Technology showcase
+├── contexts/
+│   └── locale-context.tsx       # Locale state/context
+├── data/
+│   └── featured-projects.ts     # Projects data
+├── hooks/
+│   └── use-mobile.ts            # Mobile detection hook
+├── lib/
+│   ├── locale.ts                # Locale detection & messages
+│   └── utils.ts                 # cn() utility
+├── locales/
+│   ├── en.json                  # English translations
+│   └── es.json                  # Spanish translations
+├── public/
+│   ├── CNAME                    # GitHub Pages domain
+│   └── placeholder-*.{png,svg,jpg}
+├── types/
+│   └── css.d.ts                 # CSS type declarations
+├── .github/workflows/
+│   └── deploy.yml               # Pages deployment workflow
+├── components.json              # shadcn UI settings
+├── next.config.js               # Next.js configuration
+├── package.json                 # Scripts and dependencies
+├── pnpm-lock.yaml               # Lockfile
+├── postcss.config.mjs           # Tailwind v4 via PostCSS
+├── tsconfig.json                # TypeScript config
+└── LICENSE                      # MIT license
 ```
 
 ## 🚀 Deployment
@@ -200,38 +224,49 @@ pnpm preview
 
 ### GitHub Pages Configuration
 
-1. Repository Settings → Pages
-2. Source: "GitHub Actions"
-3. Workflow: `.github/workflows/deploy.yml`
+- Repository Settings → Pages
+- Source: GitHub Actions
+- Workflow: `.github/workflows/deploy.yml`
 
 ## 🔧 Configuration
 
 ### Next.js Configuration (`next.config.js`)
 
 ```javascript
+/** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
-  trailingSlash: true,
   images: {
     unoptimized: true,
   },
+  output: 'export',
+  trailingSlash: true,
+  basePath: '',
+  assetPrefix: '',
 }
+
+export default nextConfig
 ```
 
 ### Tailwind CSS Configuration
 
-- Custom color variables using OKLCH
-- Animation utilities and keyframes
-- Responsive design system
-- Dark theme optimizations
+- Tailwind CSS v4 via PostCSS (`postcss.config.mjs`)
+- Design tokens in `app/globals.css` using OKLCH
+- `tw-animate-css` for animation utilities
+- Responsive utilities and dark mode variants
 
 ## 🌟 Performance Optimizations
 
-- **Static Generation:** Pre-rendered pages for fast loading
-- **Code Splitting:** Automatic chunking by Next.js
-- **Image Optimization:** Optimized for static export
-- **Bundle Analysis:** Minimal dependencies
-- **CSS Optimization:** Tailwind CSS purging unused styles
+- Static generation with `next export`
+- Automatic code splitting by Next.js
+- Static-friendly images (`images.unoptimized: true`)
+- Small dependency surface area
+- Tailwind v4 CSS pruning via PostCSS
+
+## 🔎 SEO & Metadata
+
+- Metadata configured in `app/layout.tsx`
+- `app/robots.ts` and `app/sitemap.ts` for crawlers
+- Social previews via OpenGraph and Twitter cards
 
 ## 🧪 Development Tips
 
