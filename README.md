@@ -49,7 +49,7 @@ A modern, interactive portfolio website showcasing my software development skill
 
 1. **Hero** - Introduction with animated background effects
 2. **About** - Professional background and expertise highlights
-3. **Tech Stack** - Organized by categories (Backend, Swift/iOS, Tools)
+3. **Tech Stack** - Organized by categories (Frontend, Backend & APIs, Tools)
 4. **Projects** - Selected work with links and details
 5. **Contact** - Multiple ways to connect
 6. **Footer** - Quick links and copyright
