@@ -1,6 +1,6 @@
 {
   "site": {
-    "title": "Anibal Ventura – Desarrollador Backend & Apple"
+    "title": "Anibal Ventura – Desarrollador de Software"
   },
   "navigation": {
     "about": "Acerca de",
@@ -12,7 +12,7 @@
   "hero": {
     "greeting": "Hola, soy",
     "name": "Anibal Ventura",
-    "title": "Desarrollador Backend & Apple",
+    "title": "Desarrollador de Software",
     "location": "de República Dominicana",
     "status": "Actualmente disponible para trabajar",
     "getInTouch": "Contactar",
@@ -21,15 +21,15 @@
   },
   "about": {
     "title": "Acerca de Mí",
-    "subtitle": "Especialista en backend y desarrollador Apple apasionado por crear soluciones robustas y escalables",
+    "subtitle": "Desarrollador de software apasionado por crear aplicaciones limpias, escalables y centradas en el usuario",
     "highlights": {
       "backend": {
-        "title": "Especialista Backend",
-        "description": "Enfoque sólido en Java/Spring Boot, Python y Node.js/NestJS para diseño robusto de APIs"
+        "title": "Desarrollador de Software",
+        "description": "Enfocado en arquitectura limpia, código mantenible y soluciones prácticas que escalan"
       },
       "swift": {
-        "title": "Desarrollador Apple",
-        "description": "Apasionado por crear aplicaciones fluidas y modernas para iOS y macOS"
+        "title": "Frontend y Mobile",
+        "description": "Construyendo interfaces responsivas con Next.js, Tailwind CSS, TypeScript, Swift y SwiftUI"
       },
       "cleanCode": {
         "title": "Defensor del Código Limpio",
@@ -37,20 +37,20 @@
       },
       "learning": {
         "title": "Siempre Aprendiendo",
-        "description": "Actualmente explorando arquitecturas nativas en la nube y concurrencia en Swift"
+        "description": "Actualmente creciendo en frontend moderno, backend y desarrollo mobile"
       }
     },
-    "description": "Soy un desarrollador dedicado que cree en escribir código limpio y mantenible que escale. Mi experiencia abarca desde la construcción de sistemas backend robustos hasta la creación de hermosas aplicaciones iOS. Siempre estoy emocionado de enfrentar nuevos desafíos y aprender tecnologías emergentes."
+    "description": "Soy un desarrollador de software dedicado que cree en escribir código limpio y mantenible que escale. Mi experiencia abarca interfaces frontend responsivas, APIs robustas y aplicaciones mobile pulidas. Siempre estoy emocionado de enfrentar nuevos desafíos y aprender tecnologías emergentes."
   },
   "techStack": {
     "title": "Stack Tecnológico",
-    "subtitle": "Tecnologías y herramientas que uso para construir aplicaciones robustas y escalables",
+    "subtitle": "Tecnologías y herramientas que uso para construir aplicaciones completas y escalables",
     "categories": {
-      "backend": {
-        "title": "Desarrollo Backend"
+      "frontend": {
+        "title": "Desarrollo Frontend"
       },
-      "swift": {
-        "title": "Desarrollo Apple"
+      "backend": {
+        "title": "Backend y APIs"
       },
       "tools": {
         "title": "Herramientas y Otros"
@@ -87,7 +87,7 @@
     },
     "cta": {
       "title": "¿Listo para trabajar juntos?",
-      "description": "Estoy disponible para desarrollo backend, proyectos Apple y oportunidades de consultoría.",
+      "description": "Estoy disponible para desarrollo de software, frontend, proyectos mobile y oportunidades de consultoría.",
       "button": "Iniciar una Conversación"
     }
   },

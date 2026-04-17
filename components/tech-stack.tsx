@@ -3,12 +3,28 @@
 import { useTranslations } from 'next-intl'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Server, Apple, Wrench } from 'lucide-react'
+import { Code2, Server, Wrench } from 'lucide-react'
 
 export function TechStack() {
   const t = useTranslations('techStack')
   
   const techCategories = [
+    {
+      title: t('categories.frontend.title'),
+      icon: <Code2 className="h-6 w-6" />,
+      technologies: [
+        { name: "Next.js", color: "bg-primary/10 text-primary border border-primary/20" },
+        { name: "React", color: "bg-accent/10 text-accent border border-accent/20" },
+        { name: "TypeScript", color: "bg-primary/15 text-primary border border-primary/25" },
+        { name: "Tailwind CSS", color: "bg-accent/15 text-accent border border-accent/25" },
+        { name: "Ionic", color: "bg-primary/10 text-primary border border-primary/20" },
+        { name: "React Native", color: "bg-accent/10 text-accent border border-accent/20" },
+        { name: "Swift", color: "bg-primary/20 text-primary border border-primary/30" },
+        { name: "SwiftUI", color: "bg-accent/10 text-accent border border-accent/20" },
+        { name: "HTML5", color: "bg-secondary/80 text-secondary-foreground border border-border" },
+        { name: "CSS3", color: "bg-secondary/80 text-secondary-foreground border border-border" },
+      ],
+    },
     {
       title: t('categories.backend.title'),
       icon: <Server className="h-6 w-6" />,
@@ -18,6 +34,8 @@ export function TechStack() {
         { name: "NestJS", color: "bg-accent/10 text-accent border border-accent/20" },
         { name: "Java", color: "bg-primary/15 text-primary border border-primary/25" },
         { name: "Spring Boot", color: "bg-primary/10 text-primary border border-primary/20" },
+        { name: "C#", color: "bg-accent/15 text-accent border border-accent/25" },
+        { name: ".NET", color: "bg-primary/15 text-primary border border-primary/25" },
         { name: "Python", color: "bg-accent/15 text-accent border border-accent/25" },
         { name: "PostgreSQL", color: "bg-primary/20 text-primary border border-primary/30" },
         { name: "Oracle DB", color: "bg-accent/10 text-accent border border-accent/20" },
@@ -26,22 +44,13 @@ export function TechStack() {
       ],
     },
     {
-      title: t('categories.swift.title'),
-      icon: <Apple className="h-6 w-6" />,
-      technologies: [
-        { name: "Swift", color: "bg-accent/15 text-accent border border-accent/25" },
-        { name: "SwiftUI", color: "bg-primary/15 text-primary border border-primary/25" },
-        { name: "Xcode", color: "bg-primary/10 text-primary border border-primary/20" },
-        { name: "iOS", color: "bg-secondary/80 text-secondary-foreground border border-border" },
-        { name: "macOS", color: "bg-secondary/80 text-secondary-foreground border border-border" },
-      ],
-    },
-    {
       title: t('categories.tools.title'),
       icon: <Wrench className="h-6 w-6" />,
       technologies: [
         { name: "Firebase", color: "bg-accent/10 text-accent border border-accent/20" },
+        { name: "Xcode", color: "bg-primary/10 text-primary border border-primary/20" },
         { name: "IntelliJ IDEA", color: "bg-primary/15 text-primary border border-primary/25" },
+        { name: "DataGrip", color: "bg-accent/15 text-accent border border-accent/25" },
         { name: "VS Code", color: "bg-primary/10 text-primary border border-primary/20" },
         { name: "Postman", color: "bg-accent/15 text-accent border border-accent/25" },
         { name: "Insomnia", color: "bg-primary/20 text-primary border border-primary/30" },
