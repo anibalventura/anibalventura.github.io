@@ -1,7 +1,5 @@
 # Portfolio Website
 
-![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/anibalventura/anibalventura.github.io/deploy.yml?branch=main&style=flat-square)
-![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen?style=flat-square)
 ![Next.js](https://img.shields.io/badge/Next.js-15.2.4-black?style=flat-square&logo=next.js)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=flat-square&logo=typescript)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-4.1.9-06B6D4?style=flat-square&logo=tailwindcss)
@@ -101,26 +99,26 @@ The site supports multiple languages with:
 
 1. **Clone the repository:**
 
-    ```bash
-    git clone https://github.com/anibalventura/anibalventura.github.io.git
-    cd anibalventura.github.io
-    ```
+   ```bash
+   git clone https://github.com/anibalventura/anibalventura.github.io.git
+   cd anibalventura.github.io
+   ```
 
 2. **Install dependencies:**
 
-    ```bash
-    pnpm install
-    ```
+   ```bash
+   pnpm install
+   ```
 
 3. **Start development server:**
 
-    ```bash
-    pnpm dev
-    ```
+   ```bash
+   pnpm dev
+   ```
 
 4. **Open your browser:**
 
-    Navigate to [http://localhost:3000](http://localhost:3000)
+   Navigate to [http://localhost:3000](http://localhost:3000)
 
 ### Available Scripts
 
@@ -242,9 +240,9 @@ const nextConfig = {
   trailingSlash: true,
   basePath: '',
   assetPrefix: '',
-}
+};
 
-export default nextConfig
+export default nextConfig;
 ```
 
 ### Tailwind CSS Configuration
