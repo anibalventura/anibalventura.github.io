@@ -53,18 +53,31 @@
   },
   "techStack": {
     "title": "Tech Stack",
-    "displayTitle": "My digital toolbox",
-    "subtitle": "Technologies and tools I use to build complete, scalable applications",
+    "displayTitle": "Built for products and production",
+    "subtitle": "A practical stack across web, mobile, APIs, banking integrations, quality, and delivery.",
     "categories": {
       "frontend": {
-        "title": "Frontend Development"
+        "title": "Frontend & Mobile"
       },
       "backend": {
         "title": "Backend & APIs"
       },
-      "tools": {
-        "title": "Tools & Others"
+      "integration": {
+        "title": "Integration & Delivery"
+      },
+      "data": {
+        "title": "Data & Tools"
       }
+    },
+    "engineering": {
+      "title": "Engineering practice",
+      "description": "Delivery, quality, and regulated-platform thinking built into every product.",
+      "microservices": "Microservices",
+      "apiIntegration": "API Integration",
+      "testing": "Unit & Integration Testing",
+      "security": "PCI DSS",
+      "architecture": "Clean Architecture",
+      "quality": "Quality Standards"
     }
   },
   "projects": {
