@@ -13,14 +13,23 @@
     "greeting": "Hi, I'm",
     "name": "Anibal Ventura",
     "title": "Software Developer",
+    "titleAccent": "building useful digital products.",
     "location": "from the Dominican Republic",
     "status": "Currently open to work",
+    "currentMode": "Current mode",
+    "openToCollaborate": "Open to collaborate",
+    "curiosity": "Curiosity",
+    "alwaysLearning": "Always learning",
+    "scroll": "Scroll",
     "getInTouch": "Get In Touch",
     "viewGithub": "View GitHub",
     "scrollToAbout": "Scroll to about section"
   },
   "about": {
     "title": "About Me",
+    "displayTitle": "Code with purpose",
+    "philosophy": "Philosophy",
+    "values": "clean · scalable · user-focused",
     "subtitle": "Software developer passionate about building clean, scalable, user-focused applications",
     "highlights": {
       "backend": {
@@ -44,6 +53,7 @@
   },
   "techStack": {
     "title": "Tech Stack",
+    "displayTitle": "My digital toolbox",
     "subtitle": "Technologies and tools I use to build complete, scalable applications",
     "categories": {
       "frontend": {
@@ -59,6 +69,7 @@
   },
   "projects": {
     "title": "Featured Projects",
+    "displayTitle": "Selected work",
     "subtitle": "A few open-source projects and code I maintain or contribute to.",
     "viewRepo": "View on GitHub",
     "noDescription": "No description provided.",
@@ -66,6 +77,7 @@
   },
   "contact": {
     "title": "Let's Connect",
+    "displayTitle": "Let's build something great.",
     "subtitle": "I'm currently open to work and always interested in discussing new opportunities and projects",
     "links": {
       "email": {
@@ -92,6 +104,7 @@
     }
   },
   "footer": {
-    "copyright": "© 2025 Anibal Ventura. All rights reserved."
+    "copyright": "© 2026 Anibal Ventura. All rights reserved.",
+    "note": "Designed & built with care in the Dominican Republic"
   }
 }

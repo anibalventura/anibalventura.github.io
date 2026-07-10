@@ -1,97 +1,62 @@
 "use client"
 
-import { useTranslations } from 'next-intl'
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Code2, Server, Wrench } from 'lucide-react'
+import { useTranslations } from "next-intl"
+import { Code2, Server, Wrench } from "lucide-react"
 
 export function TechStack() {
-  const t = useTranslations('techStack')
-  
-  const techCategories = [
+  const t = useTranslations("techStack")
+  const categories = [
     {
-      title: t('categories.frontend.title'),
-      icon: <Code2 className="h-6 w-6" />,
-      technologies: [
-        { name: "Next.js", color: "bg-primary/10 text-primary border border-primary/20" },
-        { name: "React", color: "bg-accent/10 text-accent border border-accent/20" },
-        { name: "TypeScript", color: "bg-primary/15 text-primary border border-primary/25" },
-        { name: "Tailwind CSS", color: "bg-accent/15 text-accent border border-accent/25" },
-        { name: "Ionic", color: "bg-primary/10 text-primary border border-primary/20" },
-        { name: "React Native", color: "bg-accent/10 text-accent border border-accent/20" },
-        { name: "Swift", color: "bg-primary/20 text-primary border border-primary/30" },
-        { name: "SwiftUI", color: "bg-accent/10 text-accent border border-accent/20" },
-        { name: "HTML5", color: "bg-secondary/80 text-secondary-foreground border border-border" },
-        { name: "CSS3", color: "bg-secondary/80 text-secondary-foreground border border-border" },
-      ],
+      title: t("categories.frontend.title"),
+      icon: Code2,
+      color: "#52b7ff",
+      technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Ionic", "React Native", "Swift", "SwiftUI", "HTML5", "CSS3"],
     },
     {
-      title: t('categories.backend.title'),
-      icon: <Server className="h-6 w-6" />,
-      technologies: [
-        { name: "Node.js", color: "bg-primary/10 text-primary border border-primary/20" },
-        { name: "Express.js", color: "bg-secondary/80 text-secondary-foreground border border-border" },
-        { name: "NestJS", color: "bg-accent/10 text-accent border border-accent/20" },
-        { name: "Java", color: "bg-primary/15 text-primary border border-primary/25" },
-        { name: "Spring Boot", color: "bg-primary/10 text-primary border border-primary/20" },
-        { name: "C#", color: "bg-accent/15 text-accent border border-accent/25" },
-        { name: ".NET", color: "bg-primary/15 text-primary border border-primary/25" },
-        { name: "Python", color: "bg-accent/15 text-accent border border-accent/25" },
-        { name: "PostgreSQL", color: "bg-primary/20 text-primary border border-primary/30" },
-        { name: "Oracle DB", color: "bg-accent/10 text-accent border border-accent/20" },
-        { name: "MS SQL", color: "bg-accent/15 text-accent border border-accent/25" },
-        { name: "Docker", color: "bg-primary/10 text-primary border border-primary/20" },
-      ],
+      title: t("categories.backend.title"),
+      icon: Server,
+      color: "#a99cf8",
+      technologies: ["Node.js", "Express.js", "NestJS", "Java", "Spring Boot", "C#", ".NET", "Python", "PostgreSQL", "Oracle DB", "MS SQL", "Docker"],
     },
     {
-      title: t('categories.tools.title'),
-      icon: <Wrench className="h-6 w-6" />,
-      technologies: [
-        { name: "Firebase", color: "bg-accent/10 text-accent border border-accent/20" },
-        { name: "Xcode", color: "bg-primary/10 text-primary border border-primary/20" },
-        { name: "IntelliJ IDEA", color: "bg-primary/15 text-primary border border-primary/25" },
-        { name: "DataGrip", color: "bg-accent/15 text-accent border border-accent/25" },
-        { name: "VS Code", color: "bg-primary/10 text-primary border border-primary/20" },
-        { name: "Postman", color: "bg-accent/15 text-accent border border-accent/25" },
-        { name: "Insomnia", color: "bg-primary/20 text-primary border border-primary/30" },
-        { name: "Bruno", color: "bg-accent/10 text-accent border border-accent/20" },
-        { name: "Linux", color: "bg-secondary/80 text-secondary-foreground border border-border" },
-      ],
+      title: t("categories.tools.title"),
+      icon: Wrench,
+      color: "#7ad7f0",
+      technologies: ["Firebase", "Xcode", "IntelliJ IDEA", "DataGrip", "VS Code", "Postman", "Insomnia", "Bruno", "Linux"],
     },
   ]
 
   return (
-    <section id="tech-stack" className="py-20 bg-background scroll-mt-24">
-      <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">{t('title')}</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              {t('subtitle')}
-            </p>
+    <section id="tech-stack" className="section-shell scroll-mt-24 border-t border-white/8 bg-[#081321]">
+      <div className="mx-auto max-w-7xl">
+        <div className="section-heading-grid">
+          <div>
+            <p className="section-kicker"><span>02</span> / {t("title")}</p>
+            <h2 className="section-title">{t("displayTitle")}<span className="text-primary">.</span></h2>
           </div>
+          <p className="section-lede">{t("subtitle")}</p>
+        </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {techCategories.map((category, index) => (
-              <Card key={index} className="bg-card border-border hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-3 text-card-foreground font-heading">
-                    <span className="text-2xl">{category.icon}</span>
-                    {category.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex flex-wrap gap-2">
-                    {category.technologies.map((tech, techIndex) => (
-                      <Badge key={techIndex} variant="secondary" className={`${tech.color} border-0 font-medium`}>
-                        {tech.name}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+        <div className="mt-14 grid overflow-hidden rounded-3xl border border-white/10 lg:grid-cols-3">
+          {categories.map((category, categoryIndex) => (
+            <article key={category.title} className="relative bg-white/[0.018] p-7 lg:min-h-[440px] lg:border-r lg:border-white/10 lg:p-9 lg:last:border-r-0">
+              <div className="absolute inset-x-0 top-0 h-px" style={{ backgroundColor: category.color }} />
+              <div className="flex items-start justify-between">
+                <span className="grid size-12 place-items-center rounded-2xl border border-white/10 bg-black/25" style={{ color: category.color }}>
+                  <category.icon className="size-5" />
+                </span>
+                <span className="font-mono text-[10px] text-white/25">0{categoryIndex + 1}</span>
+              </div>
+              <h3 className="mt-8 font-heading text-2xl font-semibold tracking-[-0.035em] text-foreground">{category.title}</h3>
+              <div className="mt-8 flex flex-wrap gap-2">
+                {category.technologies.map((technology) => (
+                  <span key={technology} className="rounded-lg border border-white/10 bg-black/20 px-3 py-2 font-mono text-[11px] text-muted-foreground transition-colors hover:border-white/20 hover:text-foreground">
+                    {technology}
+                  </span>
+                ))}
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>
