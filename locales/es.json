@@ -53,18 +53,31 @@
   },
   "techStack": {
     "title": "Stack Tecnológico",
-    "displayTitle": "Mi caja de herramientas",
-    "subtitle": "Tecnologías y herramientas que uso para construir aplicaciones completas y escalables",
+    "displayTitle": "Preparado para productos y producción",
+    "subtitle": "Un stack práctico para web, mobile, APIs, integraciones bancarias, calidad y entrega.",
     "categories": {
       "frontend": {
-        "title": "Desarrollo Frontend"
+        "title": "Frontend y Mobile"
       },
       "backend": {
         "title": "Backend y APIs"
       },
-      "tools": {
-        "title": "Herramientas y Otros"
+      "integration": {
+        "title": "Integración y Entrega"
+      },
+      "data": {
+        "title": "Datos y Herramientas"
       }
+    },
+    "engineering": {
+      "title": "Práctica de ingeniería",
+      "description": "Entrega, calidad y enfoque de plataformas reguladas integrados en cada producto.",
+      "microservices": "Microservicios",
+      "apiIntegration": "Integración de APIs",
+      "testing": "Pruebas Unitarias y de Integración",
+      "security": "PCI DSS",
+      "architecture": "Arquitectura Limpia",
+      "quality": "Estándares de Calidad"
     }
   },
   "projects": {
