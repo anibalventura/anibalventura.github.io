@@ -1,104 +1,53 @@
 "use client"
 
-import { useTranslations } from 'next-intl'
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Mail, ExternalLink, Coffee, Linkedin, Github } from "lucide-react"
+import { useTranslations } from "next-intl"
+import { ArrowUpRight, Coffee, Github, Linkedin, Mail } from "lucide-react"
 
 export function Contact() {
-  const t = useTranslations('contact')
-  
+  const t = useTranslations("contact")
   const contactLinks = [
-    {
-      icon: Github,
-      title: t('links.github.title'),
-      description: t('links.github.description'),
-      link: "https://github.com/anibalventura",
-      linkText: "github.com/anibalventura",
-    },
-    {
-      icon: Linkedin,
-      title: t('links.linkedin.title'),
-      description: t('links.linkedin.description'),
-      link: "https://linkedin.com/in/anibalventura",
-      linkText: "linkedin.com/in/anibalventura",
-    },
-    {
-      icon: Mail,
-      title: t('links.email.title'),
-      description: t('links.email.description'),
-      link: "mailto:contact@anibalventura.com",
-      linkText: "contact@anibalventura.com",
-    },
-    {
-      icon: Coffee,
-      title: t('links.coffee.title'),
-      description: t('links.coffee.description'),
-      link: "https://ko-fi.com/anibalventura",
-      linkText: "ko-fi.com/anibalventura",
-    }
+    { icon: Github, title: t("links.github.title"), description: t("links.github.description"), href: "https://github.com/anibalventura", value: "@anibalventura", rel: "me noopener noreferrer" },
+    { icon: Linkedin, title: t("links.linkedin.title"), description: t("links.linkedin.description"), href: "https://linkedin.com/in/anibalventura", value: "/in/anibalventura", rel: "me noopener noreferrer" },
+    { icon: Mail, title: t("links.email.title"), description: t("links.email.description"), href: "mailto:contact@anibalventura.com", value: "contact@anibalventura.com", rel: undefined },
+    { icon: Coffee, title: t("links.coffee.title"), description: t("links.coffee.description"), href: "https://ko-fi.com/anibalventura", value: "ko-fi.com/anibalventura", rel: "noopener noreferrer" },
   ]
 
   return (
-    <section id="contact" className="py-20 gradient-bg-light scroll-mt-24">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">{t('title')}</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              {t('subtitle')}
-            </p>
+    <section id="contact" className="section-shell scroll-mt-24 border-t border-white/8 bg-[#081321]">
+      <div className="mx-auto max-w-7xl">
+        <p className="section-kicker"><span>04</span> / {t("title")}</p>
+        <div className="contact-panel mt-8 overflow-hidden rounded-[2rem] border border-primary/20 bg-primary text-primary-foreground">
+          <div className="grid lg:grid-cols-[1.4fr_0.6fr]">
+            <div className="p-7 sm:p-10 md:p-14">
+              <p className="font-mono text-[10px] uppercase tracking-[0.22em] opacity-60">{t("cta.title")}</p>
+              <h2 className="mt-7 max-w-4xl font-heading text-[clamp(3rem,8vw,7rem)] font-bold leading-[0.84] tracking-[-0.07em]">{t("displayTitle")}</h2>
+              <p className="mt-8 max-w-xl text-base leading-7 opacity-70">{t("cta.description")}</p>
+              <a href="mailto:contact@anibalventura.com" className="mt-9 inline-flex h-13 items-center gap-2 rounded-xl bg-[#06101d] px-6 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5">
+                <Mail className="size-4" />
+                {t("cta.button")}
+                <ArrowUpRight className="size-4" />
+              </a>
+            </div>
+            <div className="relative hidden overflow-hidden border-l border-black/10 lg:block" aria-hidden>
+              <div className="contact-orbit contact-orbit-one" />
+              <div className="contact-orbit contact-orbit-two" />
+              <span className="absolute left-1/2 top-1/2 grid size-20 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-[#06101d] font-heading text-xl font-bold text-primary">AV</span>
+            </div>
           </div>
+        </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {contactLinks.map((contact, index) => (
-              <Card key={index} className="bg-card border-border hover:shadow-lg transition-all hover:scale-105">
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-3 text-card-foreground font-heading">
-                    <div className="bg-primary/10 p-2 rounded-lg">
-                      <contact.icon className="h-5 w-5 text-primary" />
-                    </div>
-                    {contact.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-4">{contact.description}</p>
-                  <Button
-                    variant="outline"
-                    asChild
-                    className="w-full border-primary/20 hover:bg-primary/5 hover:text-foreground bg-transparent"
-                  >
-                    <a
-                      href={contact.link}
-                      target="_blank"
-                      rel={contact.link.includes('github.com') || contact.link.includes('linkedin.com') ? 'me noopener noreferrer' : 'noopener noreferrer'}
-                      className="inline-flex items-center justify-center"
-                    >
-                      {contact.linkText}
-                      <ExternalLink className="ml-2 h-4 w-4" />
-                    </a>
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <Card className="bg-primary/5 border-primary/20">
-              <CardContent className="p-8">
-                <h3 className="text-xl font-heading font-semibold text-foreground mb-4">{t('cta.title')}</h3>
-                <p className="text-muted-foreground mb-6">
-                  {t('cta.description')}
-                </p>
-                <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground" asChild>
-                  <a href="mailto:contact@anibalventura.com">
-                    <Mail className="mr-2 h-4 w-4" />
-                    {t('cta.button')}
-                  </a>
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
+        <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {contactLinks.map((contact) => (
+            <a key={contact.title} href={contact.href} target="_blank" rel={contact.rel} className="group rounded-2xl border border-white/10 bg-white/[0.02] p-5 transition-colors hover:border-white/20 hover:bg-white/[0.04]">
+              <div className="flex items-start justify-between">
+                <contact.icon className="size-5 text-primary" />
+                <ArrowUpRight className="size-4 text-white/20 transition-colors group-hover:text-primary" />
+              </div>
+              <h3 className="mt-7 font-heading font-semibold text-foreground">{contact.title}</h3>
+              <p className="mt-1 text-xs text-muted-foreground">{contact.description}</p>
+              <p className="mt-4 truncate font-mono text-[10px] text-white/35">{contact.value}</p>
+            </a>
+          ))}
         </div>
       </div>
     </section>
