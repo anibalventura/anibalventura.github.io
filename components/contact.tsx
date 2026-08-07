@@ -17,7 +17,7 @@ export function Contact() {
   return (
     <section id="contact" className="section-shell scroll-mt-24 border-t border-white/8 bg-[#081321]">
       <div className="mx-auto max-w-7xl">
-        <p className="section-kicker"><span>04</span> / {t("title")}</p>
+        <p className="section-kicker"><span>05</span> / {t("title")}</p>
         <div className="contact-panel mt-8 overflow-hidden rounded-[2rem] border border-primary/20 bg-primary text-primary-foreground">
           <div className="grid lg:grid-cols-[1.4fr_0.6fr]">
             <div className="p-7 sm:p-10 md:p-14">

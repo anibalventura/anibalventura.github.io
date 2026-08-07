@@ -5,6 +5,7 @@
   "navigation": {
     "about": "About",
     "techStack": "Tech Stack",
+    "products": "Products",
     "projects": "Projects",
     "contact": "Contact",
     "letsTalk": "Let's Talk"
@@ -78,6 +79,28 @@
       "security": "PCI DSS",
       "architecture": "Clean Architecture",
       "quality": "Quality Standards"
+    }
+  },
+  "products": {
+    "title": "Products",
+    "displayTitle": "Products I’ve shipped",
+    "subtitle": "Personal apps I’ve built and published for people to use.",
+    "visitProduct": "Visit product",
+    "opensInNewTab": "Opens in a new tab",
+    "empty": "Products will appear here soon.",
+    "metadata": {
+      "platforms": {
+        "macOS": "macOS"
+      },
+      "statuses": {
+        "available": "Available now"
+      }
+    },
+    "apps": {
+      "hexaDevKit": {
+        "name": "Hexa DevKit",
+        "description": "A native macOS app for those small developer tasks that quietly steal your time, with 36 tools in one app."
+      }
     }
   },
   "projects": {

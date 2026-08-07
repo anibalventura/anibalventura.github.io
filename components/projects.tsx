@@ -70,7 +70,7 @@ export function Projects() {
       <div className="mx-auto max-w-7xl">
         <div className="section-heading-grid">
           <div>
-            <p className="section-kicker"><span>03</span> / {t("title")}</p>
+            <p className="section-kicker"><span>04</span> / {t("title")}</p>
             <h2 className="section-title">{t("displayTitle")}<span className="text-primary">.</span></h2>
           </div>
           <p className="section-lede">{t("subtitle")}</p>
