@@ -5,6 +5,7 @@
   "navigation": {
     "about": "Acerca de",
     "techStack": "Tecnologías",
+    "products": "Productos",
     "projects": "Proyectos",
     "contact": "Contacto",
     "letsTalk": "Hablemos"
@@ -80,6 +81,28 @@
       "quality": "Estándares de Calidad"
     }
   },
+  "products": {
+    "title": "Productos",
+    "displayTitle": "Productos que he publicado",
+    "subtitle": "Apps personales que he construido y publicado para que otras personas las usen.",
+    "visitProduct": "Visitar producto",
+    "opensInNewTab": "Se abre en una pestaña nueva",
+    "empty": "Los productos aparecerán aquí pronto.",
+    "metadata": {
+      "platforms": {
+        "macOS": "macOS"
+      },
+      "statuses": {
+        "available": "Disponible ahora"
+      }
+    },
+    "apps": {
+      "hexaDevKit": {
+        "name": "Hexa DevKit",
+        "description": "Una app nativa de macOS para aquellas tareas de desarrollador pequeñas que te roban el tiempo en silencio, con 36 herramientas en una sola app."
+      }
+    }
+  },
   "projects": {
     "title": "Proyectos Destacados",
     "displayTitle": "Trabajo seleccionado",
@@ -104,6 +127,14 @@
       "linkedin": {
         "title": "LinkedIn",
         "description": "Conecta conmigo profesionalmente"
+      },
+      "threads": {
+        "title": "Threads",
+        "description": "Sígueme en Threads"
+      },
+      "x": {
+        "title": "X",
+        "description": "Sígueme en X"
       },
       "coffee": {
         "title": "Cómprame un café",

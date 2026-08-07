@@ -1,13 +1,15 @@
 "use client"
 
 import { useTranslations } from "next-intl"
-import { ArrowUpRight, Coffee, Github, Linkedin, Mail } from "lucide-react"
+import { ArrowUpRight, AtSign, Coffee, Github, Linkedin, Mail } from "lucide-react"
 
 export function Contact() {
   const t = useTranslations("contact")
   const contactLinks = [
     { icon: Github, title: t("links.github.title"), description: t("links.github.description"), href: "https://github.com/anibalventura", value: "@anibalventura", rel: "me noopener noreferrer" },
     { icon: Linkedin, title: t("links.linkedin.title"), description: t("links.linkedin.description"), href: "https://linkedin.com/in/anibalventura", value: "/in/anibalventura", rel: "me noopener noreferrer" },
+    { icon: AtSign, title: t("links.threads.title"), description: t("links.threads.description"), href: "https://www.threads.net/@anibalventura", value: "@anibalventura", rel: "me noopener noreferrer" },
+    { icon: AtSign, title: t("links.x.title"), description: t("links.x.description"), href: "https://x.com/AnibalVentura02", value: "@AnibalVentura02", rel: "me noopener noreferrer" },
     { icon: Mail, title: t("links.email.title"), description: t("links.email.description"), href: "mailto:contact@anibalventura.com", value: "contact@anibalventura.com", rel: undefined },
     { icon: Coffee, title: t("links.coffee.title"), description: t("links.coffee.description"), href: "https://ko-fi.com/anibalventura", value: "ko-fi.com/anibalventura", rel: "noopener noreferrer" },
   ]
@@ -15,7 +17,7 @@ export function Contact() {
   return (
     <section id="contact" className="section-shell scroll-mt-24 border-t border-white/8 bg-[#081321]">
       <div className="mx-auto max-w-7xl">
-        <p className="section-kicker"><span>04</span> / {t("title")}</p>
+        <p className="section-kicker"><span>05</span> / {t("title")}</p>
         <div className="contact-panel mt-8 overflow-hidden rounded-[2rem] border border-primary/20 bg-primary text-primary-foreground">
           <div className="grid lg:grid-cols-[1.4fr_0.6fr]">
             <div className="p-7 sm:p-10 md:p-14">
