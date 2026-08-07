@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { ArrowUpRight, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -17,10 +17,12 @@ const sectionIds = [
 export function Header() {
   const t = useTranslations('navigation');
   const heroT = useTranslations('hero');
+  const accessibilityT = useTranslations('accessibility');
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
   const menuToggleRef = useRef<HTMLButtonElement>(null);
+  const mobileMenuItemRefs = useRef<Array<HTMLAnchorElement | null>>([]);
 
   const navigation = [
     { id: 'about', label: t('about') },
@@ -55,12 +57,50 @@ export function Header() {
     return () => observer.disconnect();
   }, []);
 
-  const scrollToSection = (sectionId: string, restoreMenuFocus = false) => {
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+  const closeMobileMenu = useCallback((restoreFocus = false) => {
     setIsMobileMenuOpen(false);
-    if (restoreMenuFocus) {
+    if (restoreFocus) {
       requestAnimationFrame(() => menuToggleRef.current?.focus());
     }
+  }, []);
+
+  const getScrollBehavior = () => (
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
+  );
+
+  useEffect(() => {
+    if (!isMobileMenuOpen) {
+      return;
+    }
+
+    const frame = requestAnimationFrame(() => mobileMenuItemRefs.current[0]?.focus());
+    const handleDocumentKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        closeMobileMenu(true);
+      }
+    };
+
+    document.addEventListener('keydown', handleDocumentKeyDown);
+    return () => {
+      cancelAnimationFrame(frame);
+      document.removeEventListener('keydown', handleDocumentKeyDown);
+    };
+  }, [closeMobileMenu, isMobileMenuOpen]);
+
+  const scrollToSection = (sectionId: string, restoreMenuFocus = false) => {
+    const target = document.getElementById(sectionId);
+    if (!target) {
+      return;
+    }
+
+    const hash = `#${sectionId}`;
+    if (window.location.hash !== hash) {
+      window.history.pushState(null, '', hash);
+    }
+
+    target.scrollIntoView({ behavior: getScrollBehavior() });
+    closeMobileMenu(restoreMenuFocus);
   };
 
   return (
@@ -73,9 +113,9 @@ export function Header() {
         }`}
       >
         <button
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          onClick={() => window.scrollTo({ top: 0, behavior: getScrollBehavior() })}
           className='group flex items-center gap-3 text-left'
-          aria-label='Anibal Ventura — Home'
+          aria-label={accessibilityT('home')}
         >
           <span className='grid size-9 place-items-center rounded-xl border border-primary/30 bg-primary/10 font-heading text-sm font-bold text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground'>
             AV
@@ -91,7 +131,7 @@ export function Header() {
         </button>
 
         <nav
-          aria-label='Primary'
+          aria-label={accessibilityT('primaryNavigation')}
           className='hidden items-center gap-1 rounded-xl border border-white/8 bg-white/[0.025] p-1 md:flex'
         >
           {navigation.map((item) => (
@@ -127,10 +167,11 @@ export function Header() {
             ref={menuToggleRef}
             variant='ghost'
             size='icon'
-            onClick={() => setIsMobileMenuOpen((open) => !open)}
+            onClick={() => (isMobileMenuOpen ? closeMobileMenu(true) : setIsMobileMenuOpen(true))}
             className='rounded-xl md:hidden'
-            aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-label={isMobileMenuOpen ? accessibilityT('closeMobileMenu') : accessibilityT('openMobileMenu')}
             aria-expanded={isMobileMenuOpen}
+            aria-controls='mobile-primary-navigation'
           >
             {isMobileMenuOpen ? (
               <X className='size-5' />
@@ -143,12 +184,16 @@ export function Header() {
 
       {isMobileMenuOpen && (
         <nav
-          aria-label='Mobile primary'
+          id='mobile-primary-navigation'
+          aria-label={accessibilityT('mobileNavigation')}
           className='mx-auto mt-2 max-w-7xl rounded-2xl border border-white/10 bg-[#07101d]/95 p-3 shadow-2xl backdrop-blur-xl md:hidden'
         >
           {navigation.map((item) => (
             <a
               key={item.id}
+              ref={(element) => {
+                mobileMenuItemRefs.current[navigation.indexOf(item)] = element;
+              }}
               href={`#${item.id}`}
               onClick={(event) => {
                 event.preventDefault();

@@ -35,10 +35,22 @@ export function DynamicBackground() {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
+    const primaryColor = getComputedStyle(document.documentElement)
+      .getPropertyValue('--color-primary')
+      .trim() || '#3b82f6';
+    let viewportWidth = 0;
+    let viewportHeight = 0;
+
     // Set canvas size
     const resizeCanvas = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+      viewportWidth = window.innerWidth;
+      viewportHeight = window.innerHeight;
+      canvas.width = Math.floor(viewportWidth * pixelRatio);
+      canvas.height = Math.floor(viewportHeight * pixelRatio);
+      canvas.style.width = `${viewportWidth}px`;
+      canvas.style.height = `${viewportHeight}px`;
+      ctx.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
     };
 
     resizeCanvas();
@@ -65,7 +77,12 @@ export function DynamicBackground() {
 
     // Animation loop
     const animate = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      if (document.hidden) {
+        animationRef.current = null;
+        return;
+      }
+
+      ctx.clearRect(0, 0, viewportWidth, viewportHeight);
       
       // Update particles
       particlesRef.current = particlesRef.current
@@ -82,8 +99,7 @@ export function DynamicBackground() {
       particlesRef.current.forEach(particle => {
         ctx.save();
         ctx.globalAlpha = particle.opacity;
-        ctx.fillStyle = getComputedStyle(document.documentElement)
-          .getPropertyValue('--color-primary') || '#3b82f6';
+        ctx.fillStyle = primaryColor;
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
         ctx.fill();
@@ -100,8 +116,7 @@ export function DynamicBackground() {
           if (distance < 80) {
             ctx.save();
             ctx.globalAlpha = (1 - distance / 80) * 0.15;
-            ctx.strokeStyle = getComputedStyle(document.documentElement)
-              .getPropertyValue('--color-primary') || '#3b82f6';
+            ctx.strokeStyle = primaryColor;
             ctx.lineWidth = 1;
             ctx.beginPath();
             ctx.moveTo(particle1.x, particle1.y);
@@ -115,15 +130,30 @@ export function DynamicBackground() {
       animationRef.current = requestAnimationFrame(animate);
     };
 
+    const stopAnimation = () => {
+      if (animationRef.current !== null) {
+        cancelAnimationFrame(animationRef.current);
+        animationRef.current = null;
+      }
+    };
+
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        stopAnimation();
+      } else if (animationRef.current === null) {
+        animate();
+      }
+    };
+
     window.addEventListener('mousemove', handleMouseMove);
+    document.addEventListener('visibilitychange', handleVisibilityChange);
     animate();
 
     return () => {
       window.removeEventListener('resize', resizeCanvas);
       window.removeEventListener('mousemove', handleMouseMove);
-      if (animationRef.current !== null) {
-        cancelAnimationFrame(animationRef.current);
-      }
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+      stopAnimation();
     };
   }, []); // Empty dependency array - no more loop!
 
@@ -132,6 +162,7 @@ export function DynamicBackground() {
       ref={canvasRef}
       className="fixed inset-0 pointer-events-none z-0"
       style={{ background: 'transparent' }}
+      aria-hidden="true"
     />
   );
 }

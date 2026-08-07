@@ -3,10 +3,8 @@ export const GITHUB_USER = 'anibalventura'
 export type FeaturedEntry = {
   // Optional GitHub repo slug to enrich with stars/language
   slug?: string
-  // Display title
-  title: string
-  // Display description
-  description: string
+  // Stable key for localized display copy
+  translationKey: string
   // Link when clicking the card button
   url: string
   // Optional language badge when no GitHub data is available
@@ -16,22 +14,19 @@ export type FeaturedEntry = {
 export const FEATURED: ReadonlyArray<FeaturedEntry> = [
   {
     slug: 'anibalventura/anibalventura.github.io',
-    title: 'Portfolio Website',
-    description: 'This site – Next.js, TypeScript, Tailwind CSS, and i18n.',
+    translationKey: 'portfolio',
     url: 'https://github.com/anibalventura/anibalventura.github.io',
     language: 'TypeScript',
   },
   {
     slug: undefined,
-    title: 'iOS Task Management App',
-    description: 'OS task management application built with SwiftUI.',
+    translationKey: 'taskManager',
     url: 'https://github.com/anibalventura/to-do-list-ios',
     language: 'Swift',
   },
   {
     slug: undefined,
-    title: 'User Management API',
-    description: 'Simple API for register and login and user with JWT authentication and Swagger docs.',
+    translationKey: 'userManagementApi',
     url: 'https://github.com/anibalventura/user-management-api',
     language: 'Java',
   },

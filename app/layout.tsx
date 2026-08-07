@@ -1,6 +1,5 @@
 import type React from 'react';
 import type { Metadata } from 'next';
-import { Work_Sans, Open_Sans } from 'next/font/google';
 import { IntlProvider } from '@/components/providers/intl-provider';
 import { DynamicBackground } from '@/components/dynamic-background';
 import { HtmlLangSync } from '@/components/locale-lang';
@@ -9,20 +8,6 @@ import { SkipLink } from '@/components/skip-link';
 import { ScrollProgress } from '@/components/scroll-progress';
 import { BackToTop } from '@/components/back-to-top';
 import './globals.css';
-
-const workSans = Work_Sans({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-work-sans',
-  weight: ['400', '600', '700'],
-});
-
-const openSans = Open_Sans({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-open-sans',
-  weight: ['400', '500', '600'],
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://anibalventura.com'),
@@ -89,7 +74,7 @@ export default function RootLayout({
     <html
       lang='en'
       suppressHydrationWarning
-      className={`${workSans.variable} ${openSans.variable} antialiased`}
+      className='antialiased'
     >
       <body className='font-sans'>
         <SkipLink />

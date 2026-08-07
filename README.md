@@ -127,10 +127,13 @@ The Projects section first fetches public repositories for `anibalventura` from 
 pnpm install --frozen-lockfile  # Install the locked dependencies
 pnpm dev                         # Start the development server
 pnpm build                       # Build the static export into out/
+pnpm typecheck                   # Typecheck without creating incremental output
 pnpm preview                     # Rebuild and serve out/ for local preview
 ```
 
-Use Node.js 18.18 or later with pnpm. No fixed pnpm major version is required; use a release compatible with the committed `pnpm-lock.yaml` lockfile. The `pnpm preview` command rebuilds the project and serves the resulting `out/` directory locally.
+`pnpm build` is the production/static-export validation command. The old `pnpm export` script is removed because static export is already configured in Next.js. Use Node.js 18.18 or later with pnpm. No fixed pnpm major version is required; use a release compatible with the committed `pnpm-lock.yaml` lockfile. The `pnpm preview` command rebuilds the project and serves the resulting `out/` directory locally. The current `pnpm lint` script remains the legacy interactive/unconfigured Next.js lint flow because ESLint is not currently present in the locked dependency tree; it is not a reliable validation gate until ESLint dependencies/configuration are added.
+
+There are currently no automated tests, CI workflows, or deployment workflows in this repository. Validate source changes with `pnpm typecheck` and `pnpm build`; inspect responsive and accessibility behavior in a browser when the change affects UI.
 
 ## 📁 Project Structure
 
@@ -184,7 +187,7 @@ Use Node.js 18.18 or later with pnpm. No fixed pnpm major version is required; u
 ├── types/
 │   └── css.d.ts                 # CSS type declarations
 ├── components.json              # shadcn UI settings
-├── next.config.js               # Next.js configuration
+├── next.config.mjs              # Next.js configuration
 ├── package.json                 # Scripts and dependencies
 ├── pnpm-lock.yaml               # Lockfile
 ├── postcss.config.mjs           # Tailwind v4 via PostCSS
@@ -203,7 +206,7 @@ pnpm preview
 
 ## 🔧 Configuration
 
-### Next.js Configuration (`next.config.js`)
+### Next.js Configuration (`next.config.mjs`)
 
 ```javascript
 /** @type {import('next').NextConfig} */

@@ -1,5 +1,8 @@
+import enMessages from '../locales/en.json';
+
 export const locales = ['en', 'es'] as const;
 export type Locale = (typeof locales)[number];
+export type Messages = typeof enMessages;
 export const defaultLocale: Locale = 'en';
 
 export function getLocaleFromBrowser(): Locale {
@@ -43,7 +46,7 @@ export function getSavedLocale(): Locale | null {
   }
 }
 
-export async function loadMessages(locale: Locale) {
+export async function loadMessages(locale: Locale): Promise<Messages> {
   try {
     const messages = await import(`../locales/${locale}.json`);
     return messages.default;

@@ -1,8 +1,9 @@
 'use client';
 
 import { NextIntlClientProvider } from 'next-intl';
-import { ReactNode, useState, useEffect, useCallback } from 'react';
-import { getLocaleFromBrowser, getSavedLocale, loadMessages, defaultLocale, locales, type Locale } from '@/lib/locale';
+import enMessages from '@/locales/en.json';
+import { ReactNode, useState, useEffect, useCallback, useRef } from 'react';
+import { getLocaleFromBrowser, getSavedLocale, loadMessages, defaultLocale, locales, type Locale, type Messages } from '@/lib/locale';
 import { LocaleProvider } from '@/contexts/locale-context';
 
 type Props = {
@@ -11,13 +12,19 @@ type Props = {
 
 export function IntlProvider({ children }: Props) {
   const [locale, setLocaleState] = useState<Locale>(defaultLocale);
-  const [messages, setMessages] = useState<any>(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const [messages, setMessages] = useState<Messages>(enMessages);
+  const localeRequestRef = useRef(0);
 
   const changeLocale = useCallback(async (newLocale: Locale) => {
+    const requestId = ++localeRequestRef.current;
+
     try {
-      setIsLoading(true);
       const loadedMessages = await loadMessages(newLocale);
+
+      if (requestId !== localeRequestRef.current) {
+        return;
+      }
+
       setLocaleState(newLocale);
       setMessages(loadedMessages);
       
@@ -28,48 +35,46 @@ export function IntlProvider({ children }: Props) {
         console.warn('Failed to save locale preference:', error);
       }
     } catch (error) {
-      console.error('Failed to change locale:', error);
-    } finally {
-      setIsLoading(false);
+      if (requestId === localeRequestRef.current) {
+        console.error('Failed to change locale:', error);
+      }
     }
   }, []);
 
   useEffect(() => {
+    const requestId = ++localeRequestRef.current;
+    let active = true;
+
     const initializeLocale = async () => {
       try {
         // Check for saved preference first
         const savedLocale = getSavedLocale();
         const detectedLocale = savedLocale || getLocaleFromBrowser();
-          
+
         const loadedMessages = await loadMessages(detectedLocale);
-        
+
+        if (!active || requestId !== localeRequestRef.current) {
+          return;
+        }
+
         setLocaleState(detectedLocale);
         setMessages(loadedMessages);
       } catch (error) {
-        console.error('Failed to initialize locale:', error);
-        // Fallback to default
-        const fallbackMessages = await loadMessages(defaultLocale);
-        setLocaleState(defaultLocale);
-        setMessages(fallbackMessages);
-      } finally {
-        setIsLoading(false);
+        if (active && requestId === localeRequestRef.current) {
+          console.error('Failed to initialize locale:', error);
+        }
       }
     };
 
-    initializeLocale();
-  }, []);
+    void initializeLocale();
 
-  // Show loading or fallback while messages are being loaded
-  if (isLoading || !messages) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
-          <p className="text-muted-foreground">Loading...</p>
-        </div>
-      </div>
-    );
-  }
+    return () => {
+      active = false;
+      if (requestId === localeRequestRef.current) {
+        localeRequestRef.current += 1;
+      }
+    };
+  }, []);
 
   return (
     <LocaleProvider 
@@ -79,7 +84,7 @@ export function IntlProvider({ children }: Props) {
         availableLocales: locales
       }}
     >
-      <NextIntlClientProvider messages={messages} locale={locale}>
+      <NextIntlClientProvider messages={messages} locale={locale} timeZone="UTC">
         {children}
       </NextIntlClientProvider>
     </LocaleProvider>

@@ -40,7 +40,7 @@ export function Contact() {
 
         <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {contactLinks.map((contact) => (
-            <a key={contact.title} href={contact.href} target="_blank" rel={contact.rel} className="group rounded-2xl border border-white/10 bg-white/[0.02] p-5 transition-colors hover:border-white/20 hover:bg-white/[0.04]">
+            <a key={contact.title} href={contact.href} target={contact.href.startsWith("mailto:") ? undefined : "_blank"} rel={contact.rel} className="group rounded-2xl border border-white/10 bg-white/[0.02] p-5 transition-colors hover:border-white/20 hover:bg-white/[0.04]">
               <div className="flex items-start justify-between">
                 <contact.icon className="size-5 text-primary" />
                 <ArrowUpRight className="size-4 text-white/20 transition-colors group-hover:text-primary" />

@@ -10,6 +10,14 @@
     "contact": "Contact",
     "letsTalk": "Let's Talk"
   },
+  "accessibility": {
+    "languageMenu": "Choose language",
+    "primaryNavigation": "Primary navigation",
+    "mobileNavigation": "Mobile navigation",
+    "home": "Anibal Ventura — Home",
+    "openMobileMenu": "Open menu",
+    "closeMobileMenu": "Close menu"
+  },
   "hero": {
     "greeting": "Hi, I'm",
     "name": "Anibal Ventura",
@@ -109,7 +117,23 @@
     "subtitle": "A few open-source projects and code I maintain or contribute to.",
     "viewRepo": "View on GitHub",
     "noDescription": "No description provided.",
-    "error": "Some project details could not be loaded."
+    "loading": "Refreshing project details.",
+    "empty": "No projects are available right now.",
+    "error": "Some project details could not be loaded. Showing curated projects instead.",
+    "featured": {
+      "portfolio": {
+        "title": "Portfolio Website",
+        "description": "This site — Next.js, TypeScript, Tailwind CSS, and i18n."
+      },
+      "taskManager": {
+        "title": "iOS Task Management App",
+        "description": "Task management application built with SwiftUI."
+      },
+      "userManagementApi": {
+        "title": "User Management API",
+        "description": "API for registration, login, JWT authentication, and Swagger documentation."
+      }
+    }
   },
   "contact": {
     "title": "Let's Connect",
