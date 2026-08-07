@@ -1,13 +1,15 @@
 "use client"
 
 import { useTranslations } from "next-intl"
-import { ArrowUpRight, Coffee, Github, Linkedin, Mail } from "lucide-react"
+import { ArrowUpRight, AtSign, Coffee, Github, Linkedin, Mail } from "lucide-react"
 
 export function Contact() {
   const t = useTranslations("contact")
   const contactLinks = [
     { icon: Github, title: t("links.github.title"), description: t("links.github.description"), href: "https://github.com/anibalventura", value: "@anibalventura", rel: "me noopener noreferrer" },
     { icon: Linkedin, title: t("links.linkedin.title"), description: t("links.linkedin.description"), href: "https://linkedin.com/in/anibalventura", value: "/in/anibalventura", rel: "me noopener noreferrer" },
+    { icon: AtSign, title: t("links.threads.title"), description: t("links.threads.description"), href: "https://www.threads.net/@anibalventura", value: "@anibalventura", rel: "me noopener noreferrer" },
+    { icon: AtSign, title: t("links.x.title"), description: t("links.x.description"), href: "https://x.com/AnibalVentura02", value: "@AnibalVentura02", rel: "me noopener noreferrer" },
     { icon: Mail, title: t("links.email.title"), description: t("links.email.description"), href: "mailto:contact@anibalventura.com", value: "contact@anibalventura.com", rel: undefined },
     { icon: Coffee, title: t("links.coffee.title"), description: t("links.coffee.description"), href: "https://ko-fi.com/anibalventura", value: "ko-fi.com/anibalventura", rel: "noopener noreferrer" },
   ]

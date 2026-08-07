@@ -105,6 +105,14 @@
         "title": "LinkedIn",
         "description": "Conecta conmigo profesionalmente"
       },
+      "threads": {
+        "title": "Threads",
+        "description": "Sígueme en Threads"
+      },
+      "x": {
+        "title": "X",
+        "description": "Sígueme en X"
+      },
       "coffee": {
         "title": "Cómprame un café",
         "description": "Apoya mi trabajo"
